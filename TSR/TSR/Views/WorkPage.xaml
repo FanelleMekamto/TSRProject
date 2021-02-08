@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.WorkPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="Année d'expérience" TextColor="DarkGray">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Au cours des dix dernières années, combien d'années d'expérience de travail qualifié au Canada possédez-vous?"
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerExperienceTravailCanada" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExperienceTravailCanada_SelectedIndexChanged"
+                                        SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Sélectionner...</x:String>
+                                        <x:String>Aucune ou moins d'un an</x:String>
+                                        <x:String>1 an</x:String>
+                                        <x:String>2 ans</x:String>
+                                        <x:String>3 ans</x:String>
+                                        <x:String>4 ans</x:String>
+                                        <x:String>5 ans ou plus</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Au cours des dix dernières années, combien d'années d'expérience de travail qualifié à l'étranger possédez-vous?" 
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerExperienceTravailEtranger" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExperienceTravailEtranger_SelectedIndexChanged"
+                                    SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Sélectionner...</x:String>
+                                        <x:String>Aucune ou moins d'un an</x:String>
+                                        <x:String>1 an</x:String>
+                                        <x:String>2 ans</x:String>
+                                        <x:String>3 ans ou plus</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Possédez-vous un certificat de compétence d'une province, d'un territoire ou d'un organisme fédéral canadien?" 
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerCertificatCanada" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerCertificatCanada_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Avez-vous une offre d'emploi valide appuyée par une étude d'impact sur le marché du travail (si nécessaire)?" 
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerOffreEmploiValide" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerOffreEmploiValide_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Padding="13, 0" IsVisible="false" x:Name="choixNiveauCompetence">
+                                <Label Text="Quel est le genre ou le niveau de compétence dans la CNP de l'offre d'emploi?" VerticalOptions="Center"/>
+                                <Label Text="Voir le détail des niveaux de compétence ici!"  x:Name="detailCompetence" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerNiveauCompétence" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerNiveauCompétence_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Genre de compétence de 00 de la CNP</x:String>
+                                        <x:String>Niveau de compétence A ou B ou tout genre autre que 00 de la CNP</x:String>
+                                        <x:String>Niveau de compétence C ou D de la CNP</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Avez-vous un certificat de désignation d'une province ou d'un territoire?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerCertificatDesignationProvince" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerCertificatDesignationProvince_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Est-ce que vous ou votre époux/conjoint de fait (si celui-ci vous accompagne au Canada) 
+                                       avez au moins un frère ou une sœur habitant au Canada qui est un citoyen ou un résident permanent?" 
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerPresenceFrere" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerPresenceFrere_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button Text="Suivant" Clicked="nextWorkPage_Clicked"
+                    x:Name="nextWorkPage"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "R7pWOo/Ul05QzZ7xQIOh6SPcaOBmcyEhFGpq+UtYIqeMrlGYqJTWiYJzNttSPhzQvPZsq4BnxMAiu7TwmkUSqg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Fanelle\\source\\repos\\TSR\\TSR\\TSR.iOS\\TSR.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fanelle\\.nuget\\packages\\csvhelper\\19.0.0\\csvhelper.19.0.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\xamarin.forms\\5.0.0.1874\\xamarin.forms.5.0.0.1874.nupkg.sha512"
+  ],
+  "logs": []
+}

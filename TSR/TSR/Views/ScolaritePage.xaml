@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Scolarité"
+             x:Class="TSR.Views.ScolaritePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="Scolarité" TextColor="DarkGray">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Quel niveau d'études avez-vous atteint?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerEtudeComplete" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEtudeComplete_SelectedIndexChanged"
+                                        ItemsSource="{Binding ListData}" SelectedItem="{Binding SelectedLevel}">
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0" x:Name="choixObtentionDiplome">
+                                <Label Text="Avez-vous obtenu un certificat, grade ou diplôme canadien?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerObtentionDiplome" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerObtentionDiplome_SelectedIndexChanged"
+                                    SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Sélectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixDiplomeCanadien">
+                                <Label Text="Choisissez la meilleure réponse pour décrire ce niveau d'éducation." VerticalOptions="Center"/>
+                                <Picker x:Name="pickerDiplomeCanadien" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerDiplomeCanadien_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>École secondaire ou moins</x:String>
+                                        <x:String>Diplôme ou certificat d'un ou de deux ans</x:String>
+                                        <x:String>Dégré/Diplôme/Certificat de 3 ans ou plus OU Maitrise/Doctorat professionnel avec moins un an de scolarité</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button Text="Suivant" Clicked="nextScolaritePage_Clicked"
+                    x:Name="nextContactPage"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

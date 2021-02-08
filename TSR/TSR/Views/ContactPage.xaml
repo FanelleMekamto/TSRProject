@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:TSR.Resources"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="Coordonnées personnelles"
+             x:Class="TSR.Views.ContactPage">
+    <StackLayout>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Renseignements personnelles (* Champs obligatoires)" TextColor="DarkGray">
+                    <EntryCell Label="Nom*" Placeholder="Entrez votre nom" LabelColor="Red"/>
+                    <EntryCell Label="Prenom*" Placeholder="Entrez votre prénom" LabelColor="Red"/>
+                    <EntryCell Label="Telephone*" Placeholder="Entrez votre telephone principal" LabelColor="Red" Keyboard="Telephone"/>
+                    <EntryCell Label="Email*" Placeholder="Entrez votre courriel" LabelColor="Red" Keyboard="Email"/>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Quel âge avez-vous?" VerticalOptions="Center" TextColor="Red"/>
+                            <Label x:Name="ageValue" Text="Selectionnez votre âge" VerticalOptions="Center" 
+                                   HorizontalOptions="EndAndExpand" TextColor="Gray"/>
+                            <!--<DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy"          
+                                DateSelected="nextContactPage_DateSelected"
+                                x:Name="dateNais"  VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="EndAndExpand"/>-->
+
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="État matrimonial" TextColor="DarkGray">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <Label Text="Quel est votre état Matrimonial?" VerticalOptions="Center"/>
+                            <Picker x:Name="pickerStatutMatrimonial" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerStatutMatrimonial_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Marié(e)</x:String>
+                                    <x:String>En concubinage(1 an au moins)</x:String>
+                                    <x:String>Mariage annulé</x:String>
+                                    <x:String>Divorcé / Séparé</x:String>
+                                    <x:String>Séparé légalement</x:String>
+                                    <x:String>Celibataire/Jamais marié</x:String>
+                                    <x:String>Veuf(ve)</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixStatutConjoint">
+                            <Label Text="Votre époux ou conjoint de fait est-il citoyen ou resident permanent du Canada?" VerticalOptions="Center"/>
+                            <Picker x:Name="pickerStatutConjoint" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerStatutConjoint_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Oui</x:String>
+                                    <x:String>Non</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixAccompagner">
+                            <Label Text="Votre époux ou conjoint de fait vous accompagnera t-il au Canada?" VerticalOptions="Center"/>
+                            <Picker x:Name="pickerAcommpagner" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerAcommpagner_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Oui</x:String>
+                                    <x:String>Non</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Button Text="Suivant" Clicked="nextContactPage_Clicked"
+                    x:Name="nextContactPage"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+        
+        
+    </StackLayout>
+</ContentPage>

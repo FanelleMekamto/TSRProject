@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.ThanksPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Votre candidature a été soumis avec succès. Nous vous contacterons dans de bref délais pour vous donner suite." />
+            <Label Text="Nous vous souhaitons la meilleure des chances pour la suite. " />
+            <Label Text="La direction de TSR " />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

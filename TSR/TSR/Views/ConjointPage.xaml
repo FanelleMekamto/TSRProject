@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.ConjointPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="Détails conjoint de fait" TextColor="DarkGray">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Quel est le niveau de scolarité le plus élevé pour lequel votre époux ou conjoint de fait a :"
+                                       VerticalOptions="Center"/>
+                                <Label Text="* Obtenu un certificat, grade ou diplôme canadien? ou"
+                                       VerticalOptions="Center"/>
+                                <Label Text="* Fait faire un évaluation des diplômes d'études (EDE)? "/>
+                                <Picker x:Name="pickerEtudeCompleteConjoint" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEtudeCompleteConjoint_SelectedIndexChanged"
+                                        SelectedIndex="0">
+
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Au cours des dix dernières années, combien d'années d'expérience de travail qualifié au Canada votre époux ou conjoint de fait possède-t-il?" 
+                                       VerticalOptions="Center"/>
+                                <Picker x:Name="pickerExperienceTravailConjoint" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExperienceTravailConjoint_SelectedIndexChanged"
+                                    SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Sélectionner...</x:String>
+                                        <x:String>Aucune ou moins d'un an</x:String>
+                                        <x:String>1 an</x:String>
+                                        <x:String>2 ans</x:String>
+                                        <x:String>3 ans</x:String>
+                                        <x:String>4 ans</x:String>
+                                        <x:String>5 ans ou plus</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Quel est la premiere langue officielle de votre conjoint/époux?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerLangueOfficielleConjoint" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerLangueOfficielleConjoint_SelectedIndexChanged" SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Francais</x:String>
+                                        <x:String>Anglais</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                <Label Text="Votre époux ou conjoint de fait a-t-il passé un test linguistique? Si oui, lequel?" 
+                                       VerticalOptions="Center"/>
+                                <Label Text="Les résultats du test doivent dater de moins de deux ans." 
+                                       VerticalOptions="Center"/>
+                                
+                                <Picker x:Name="pickerTestLinguistiqueConjoint" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerTestLinguistiqueConjoint_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>CELPIP-G</x:String>
+                                        <x:String>IELTS</x:String>
+                                        <x:String>TEF Canada</x:String>
+                                        <x:String>TCF Canada</x:String>
+                                        <x:String>Sans objet</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotesConjoint">
+                                <Label Text="Entrez vos notes de test pour :" />
+
+                                <StackLayout Padding="13, 0">
+                                    <Label Text="Expression Orale :" VerticalOptions="Center" TextColor="Red"/>
+                                    <Picker x:Name="pickerExpOraleValueConjoint" VerticalOptions="Center" 
+                                            HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpOraleValueConjoint_SelectedIndexChanged" SelectedIndex="0">
+                                    </Picker>
+                                </StackLayout>
+
+                                <StackLayout Padding="13, 0">
+                                    <Label Text="Compehension de l'oral:" VerticalOptions="Center" TextColor="Red"/>
+                                    <Picker x:Name="pickerComOralValueConjoint" VerticalOptions="Center" 
+                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComOralValueConjoint_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+
+                                <StackLayout  Padding="13, 0">
+                                    <Label Text="Comprehension de l'écrit:" VerticalOptions="Center" TextColor="Red"/>
+                                    <Picker x:Name="pickerComEcritValueConjoint" VerticalOptions="Center" 
+                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComEcritValueConjoint_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+
+                                <StackLayout Padding="13, 0">
+                                    <Label Text="Expression écrite :" VerticalOptions="Center" TextColor="Red"/>
+                                    <Picker x:Name="pickerExpEcriteValueConjoint" VerticalOptions="Center" 
+                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpEcriteValueConjoint_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button Text="Suivant" Clicked="nextConjointPage_Clicked"
+                    x:Name="nextWorkPage"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

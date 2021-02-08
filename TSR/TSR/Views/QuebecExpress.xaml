@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.QuebecExpress"
+             Title="Statut">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listViewCNP" RowHeight="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="15,0">
+                                <Label Text="{Binding ID}" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Suivant"
+                       Clicked="Button_Clicked"
+                       BackgroundColor="Green"
+                       TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
