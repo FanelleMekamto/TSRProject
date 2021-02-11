@@ -35,14 +35,14 @@ namespace TSR.Views
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
             var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
-            fiche.AnneeEpérienceTravailCanada = statutSelectedIndex;
+            fiche.AnneeExperienceTravailCanada = statutSelectedIndex;
         }
 
         private void pickerExperienceTravailEtranger_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
             var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
-            fiche.AnneeEpérienceTravailEtranger = statutSelectedIndex;
+            fiche.AnneeExperienceTravailEtranger = statutSelectedIndex;
         }
 
         private void pickerCertificatCanada_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,11 +62,12 @@ namespace TSR.Views
         private void pickerOffreEmploiValide_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
-            var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
+            var statutSelectedIndex = pickerOffreEmploiValide.SelectedIndex;
 
             if (statutSelectedIndex == 1)
             {
                 fiche.AOffreEmploi = true;
+                choixNiveauCompetence.IsVisible = true;
             }
             else if (statutSelectedIndex == 2)
             {
@@ -77,14 +78,14 @@ namespace TSR.Views
         private void pickerNiveauCompétence_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
-            var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
+            var statutSelectedIndex = pickerNiveauCompétence.SelectedIndex;
             fiche.NiveauCompetenceOffre = statutSelectedIndex;
         }
 
         private void pickerCertificatDesignationProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
-            var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
+            var statutSelectedIndex = pickerCertificatDesignationProvince.SelectedIndex;
             if (statutSelectedIndex == 1)
             {
                 fiche.ACertificatDesignationProvince = true;
@@ -98,7 +99,7 @@ namespace TSR.Views
         private void pickerPresenceFrere_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
-            var statutSelectedIndex = pickerExperienceTravailCanada.SelectedIndex;
+            var statutSelectedIndex = pickerPresenceFrere.SelectedIndex;
             if (statutSelectedIndex == 1)
             {
                 fiche.PresenceFrere = true;
@@ -107,6 +108,20 @@ namespace TSR.Views
             {
                 fiche.PresenceFrere = false;
             }
+        }
+
+        private void pickerDetailCompetence_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var page = new CpnDetailPage();
+
+            page.CpnDetails.ItemSelected += (source, args) =>
+            {
+                descriptionCompetence.Text = args.SelectedItem.ToString();
+                Navigation.PopAsync();
+                fiche.DetailCompetence = args.SelectedItemIndex;
+            };
+
+            Navigation.PushAsync(page);
         }
     }
 }

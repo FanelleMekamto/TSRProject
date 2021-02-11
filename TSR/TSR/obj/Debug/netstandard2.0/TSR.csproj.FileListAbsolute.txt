@@ -34,3 +34,4 @@ C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\Conjoin
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\EndProcessPage.xaml.g.cs
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\ThanksPage.xaml.g.cs
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\WorkPage.xaml.g.cs
+C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\CpnDetailPage.xaml.g.cs

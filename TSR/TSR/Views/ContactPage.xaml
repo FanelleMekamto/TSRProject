@@ -18,11 +18,6 @@
                             <Label Text="Quel âge avez-vous?" VerticalOptions="Center" TextColor="Red"/>
                             <Label x:Name="ageValue" Text="Selectionnez votre âge" VerticalOptions="Center" 
                                    HorizontalOptions="EndAndExpand" TextColor="Gray"/>
-                            <!--<DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy"          
-                                DateSelected="nextContactPage_DateSelected"
-                                x:Name="dateNais"  VerticalOptions="CenterAndExpand" 
-                                HorizontalOptions="EndAndExpand"/>-->
-
                         </StackLayout>
                     </ViewCell>
                 </TableSection>

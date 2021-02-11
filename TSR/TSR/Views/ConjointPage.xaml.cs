@@ -45,7 +45,7 @@ namespace TSR.Views
         private void pickerExperienceTravailConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
             var statutSelectedIndex = pickerExperienceTravailConjoint.SelectedIndex;
-            fiche.AnneeEpérienceTravailConjointCanada = statutSelectedIndex;
+            fiche.AnneeExperienceTravailConjointCanada = statutSelectedIndex;
         }
 
         private void pickerLangueOfficielleConjoint_SelectedIndexChanged(object sender, EventArgs e)

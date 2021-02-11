@@ -6,6 +6,7 @@
         <StackLayout>
             <Label Text="Votre candidature a été soumis avec succès. Nous vous contacterons dans de bref délais pour vous donner suite." />
             <Label Text="Nous vous souhaitons la meilleure des chances pour la suite. " />
+            <Label x:Name="pointTotal" Text="Point Total : " />
             <Label Text="La direction de TSR " />
         </StackLayout>
     </ContentPage.Content>

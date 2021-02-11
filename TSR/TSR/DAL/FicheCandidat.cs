@@ -8,27 +8,28 @@ namespace TSR.DAL
     {
         public int Age { get; set; }
         public int PointTotal { get; set; }
-        public int EtudeComplete { get; set; }
-        public int AnneeEpérienceTravailCanada { get; set; }
-        public int AnneeEpérienceTravailConjointCanada { get; set; }
-        public int AnneeEpérienceTravailEtranger { get; set; }
+        public int DetailCompetence { get; set; }
+    public int EtudeComplete { get; set; }
+        //public int NiveauEtude { get; set; }
+        public int AnneeExperienceTravailCanada { get; set; }
+        public int AnneeExperienceTravailEtranger { get; set; }
+        public int AnneeExperienceTravailConjointCanada { get; set; }
         public int NiveauCompetenceOffre { get; set; }
         public int LangueOfficielle { get; set; }
         public int LangueOfficielleConjoint { get; set; }
         public Boolean AObtenuDiplomeCanadien { get; set; }
         public Boolean ACertificatCompetence { get; set; }
         public Boolean AOffreEmploi { get; set; }
+        public int GroupeOffreEmploi { get; set; }
         public Boolean ACertificatDesignationProvince { get; set; }
         public Boolean AObtenuDiplomeCanadienConjoint { get; set; }
         public Boolean PresenceFrere { get; set; }
         public int DescriptionEtudeCanadien { get; set; }
-
         public int NoteLinguistique { get; set; }
         public int NoteLinguistiqueConjoint { get; set; }
-
         public Boolean ConjointAccompagne { get; set; }
-
         public int EtudeCompleteConjoint { get; set; }
+        
         public void  PointAge(int age, Boolean conjointAccompagne)
         {
             int pointAge = 0;
@@ -177,267 +178,285 @@ namespace TSR.DAL
         }
 
         //To modify
-        public void pointagePremiereLangue(Boolean expire, int choixTest, int noteEO, int notesCO,int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointagePremiereLangue(Boolean expire, int choixTest, int noteEO, int notesCO,int notesCE, int notesEE, Boolean conjointAccompagne)
         {
-            int pointTestLangue = 0;
+            int pointTestPremiereLangue = 0;
 
             if (!expire)
             {
                 switch (choixTest)
                 {
                     case 1:
-                        pointTestLangue = 0;
+                        pointTestPremiereLangue = 0;
                         break;
                     case 2:
-                        pointTestLangue = conjointAccompagne ? 30 : 28;
+                        pointTestPremiereLangue = conjointAccompagne ? 30 : 28;
                         break;
                     case 3:
-                        pointTestLangue = conjointAccompagne ? 90 : 84;
+                        pointTestPremiereLangue = conjointAccompagne ? 90 : 84;
                         break;
                     case 4:
-                        pointTestLangue = conjointAccompagne ? 98 : 91;
+                        pointTestPremiereLangue = conjointAccompagne ? 98 : 91;
                         break;
                     case 5:
-                        pointTestLangue = conjointAccompagne ? 120 : 112;
+                        pointTestPremiereLangue = conjointAccompagne ? 120 : 112;
                         break;
                     case 6:
-                        pointTestLangue = conjointAccompagne ? 128 : 119;
+                        pointTestPremiereLangue = conjointAccompagne ? 128 : 119;
                         break;
                     case 7:
-                        pointTestLangue = conjointAccompagne ? 135 : 126;
+                        pointTestPremiereLangue = conjointAccompagne ? 135 : 126;
                         break;
                     case 8:
-                        pointTestLangue = conjointAccompagne ? 150 : 140;
+                        pointTestPremiereLangue = conjointAccompagne ? 150 : 140;
                         break;
                 }
             }
-            PointTotal += pointTestLangue;
+            PointTotal += pointTestPremiereLangue;
+
+            return pointTestPremiereLangue;
         }
 
-        public void pointageDeuxiemeLangue(Boolean expire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointageDeuxiemeLangue(Boolean expire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
         {
-            int pointTestLangue = 0;
+            int pointTestDeuxiemeLangue = 0;
 
             if (!expire)
             {
                 switch (choixTest)
                 {
                     case 1:
-                        pointTestLangue = 0;
+                        pointTestDeuxiemeLangue = 0;
                         break;
                     case 2:
-                        pointTestLangue = conjointAccompagne ? 30 : 28;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 30 : 28;
                         break;
                     case 3:
-                        pointTestLangue = conjointAccompagne ? 90 : 84;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 90 : 84;
                         break;
                     case 4:
-                        pointTestLangue = conjointAccompagne ? 98 : 91;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 98 : 91;
                         break;
                     case 5:
-                        pointTestLangue = conjointAccompagne ? 120 : 112;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 120 : 112;
                         break;
                     case 6:
-                        pointTestLangue = conjointAccompagne ? 128 : 119;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 128 : 119;
                         break;
                     case 7:
-                        pointTestLangue = conjointAccompagne ? 135 : 126;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 135 : 126;
                         break;
                     case 8:
-                        pointTestLangue = conjointAccompagne ? 150 : 140;
+                        pointTestDeuxiemeLangue = conjointAccompagne ? 150 : 140;
                         break;
                 }
             }
-            PointTotal += pointTestLangue;
+            PointTotal += pointTestDeuxiemeLangue;
+
+            return pointTestDeuxiemeLangue;
         }
 
-        public void pointageLangueConjoint(Boolean expire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointageLangueConjoint(Boolean TestExpire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
         {
-            int pointTestLangue = 0;
+            int pointTestLangueConjoint = 0;
 
-            if (!expire)
+            if (!TestExpire)
             {
                 switch (choixTest)
                 {
                     case 1:
-                        pointTestLangue = 0;
+                        pointTestLangueConjoint = 0;
                         break;
                     case 2:
-                        pointTestLangue = conjointAccompagne ? 30 : 28;
+                        pointTestLangueConjoint = conjointAccompagne ? 30 : 28;
                         break;
                     case 3:
-                        pointTestLangue = conjointAccompagne ? 90 : 84;
+                        pointTestLangueConjoint = conjointAccompagne ? 90 : 84;
                         break;
                     case 4:
-                        pointTestLangue = conjointAccompagne ? 98 : 91;
+                        pointTestLangueConjoint = conjointAccompagne ? 98 : 91;
                         break;
                     case 5:
-                        pointTestLangue = conjointAccompagne ? 120 : 112;
+                        pointTestLangueConjoint = conjointAccompagne ? 120 : 112;
                         break;
                     case 6:
-                        pointTestLangue = conjointAccompagne ? 128 : 119;
+                        pointTestLangueConjoint = conjointAccompagne ? 128 : 119;
                         break;
                     case 7:
-                        pointTestLangue = conjointAccompagne ? 135 : 126;
+                        pointTestLangueConjoint = conjointAccompagne ? 135 : 126;
                         break;
                     case 8:
-                        pointTestLangue = conjointAccompagne ? 150 : 140;
+                        pointTestLangueConjoint = conjointAccompagne ? 150 : 140;
                         break;
                 }
             }
-            PointTotal += pointTestLangue;
+            PointTotal += pointTestLangueConjoint;
+
+            return pointTestLangueConjoint;
         }
 
-        public void pointageExperienceTravail(int anneeExperience, Boolean conjointAccompagne)
+        public int pointageExperienceTravail(int anneeExperience, Boolean conjointAccompagne)
         {
-            int pointExpTravail = 0;
+            int pointExpTravailCanada = 0;
 
                 switch (anneeExperience)
                 {
                     case 1:
-                        pointExpTravail = 0;
+                        pointExpTravailCanada = 0;
                         break;
                     case 2:
-                        pointExpTravail = conjointAccompagne ? 35 : 40;
+                        pointExpTravailCanada = conjointAccompagne ? 35 : 40;
                         break;
                     case 3:
-                        pointExpTravail = conjointAccompagne ? 46 : 53;
+                        pointExpTravailCanada = conjointAccompagne ? 46 : 53;
                         break;
                     case 4:
-                        pointExpTravail = conjointAccompagne ? 56 : 64;
+                        pointExpTravailCanada = conjointAccompagne ? 56 : 64;
                         break;
                     case 5:
-                        pointExpTravail = conjointAccompagne ? 63 : 72;
+                        pointExpTravailCanada = conjointAccompagne ? 63 : 72;
                         break;
                     case 6:
-                        pointExpTravail = conjointAccompagne ? 70 : 80;
+                        pointExpTravailCanada = conjointAccompagne ? 70 : 80;
                         break;
                 }
             
-            PointTotal += pointExpTravail;
+            PointTotal += pointExpTravailCanada;
+
+            return pointExpTravailCanada;
         }
 
-        public void pointageExperienceTravailConjoint(int anneeExperience)
+        public int pointageExperienceTravailConjoint(int anneeExperience)
         {
-            int pointExpTravail = 0;
+            int pointExperienceTravailConjoint = 0;
 
             switch (anneeExperience)
             {
                 case 1:
-                    pointExpTravail = 0;
+                    pointExperienceTravailConjoint = 0;
                     break;
                 case 2:
-                    pointExpTravail = 5;
+                    pointExperienceTravailConjoint = 5;
                     break;
                 case 3:
-                    pointExpTravail = 7;
+                    pointExperienceTravailConjoint = 7;
                     break;
                 case 4:
-                    pointExpTravail = 8;
+                    pointExperienceTravailConjoint = 8;
                     break;
                 case 5:
-                    pointExpTravail = 9;
+                    pointExperienceTravailConjoint = 9;
                     break;
                 case 6:
-                    pointExpTravail = 10;
+                    pointExperienceTravailConjoint = 10;
                     break;
             }
 
-            PointTotal += pointExpTravail;
+            PointTotal += pointExperienceTravailConjoint;
+
+            return pointExperienceTravailConjoint;
         }
 
         //À Modifier
-        public void combinaisonScolariteLangues(int niveauEtude, int pointPremiereLangue)
+        public int combinaisonScolariteLangues(int niveauEtudeComplete, int pointPremiereLangue)
         {
             int pointCombinaisonSL = 0;
 
-            if (niveauEtude == 0 || niveauEtude ==1)
+            if (niveauEtudeComplete == 0 || niveauEtudeComplete ==1)
                 pointCombinaisonSL = 0;
 
-            if (niveauEtude == 2 && pointPremiereLangue == 9)
+            if (niveauEtudeComplete == 2 && pointPremiereLangue == 9)
                 pointCombinaisonSL = 13;
 
-            if (niveauEtude == 3 && pointPremiereLangue == 9)
+            if (niveauEtudeComplete == 3 && pointPremiereLangue == 9)
                 pointCombinaisonSL = 25;
 
-            if (niveauEtude == 9 && pointPremiereLangue == 9)
+            if (niveauEtudeComplete == 9 && pointPremiereLangue == 9)
                 pointCombinaisonSL = 25;
 
-            if (niveauEtude == 9 && pointPremiereLangue == 9)
+            if (niveauEtudeComplete == 9 && pointPremiereLangue == 9)
                 pointCombinaisonSL = 50;
 
             PointTotal += pointCombinaisonSL;
+
+            return pointCombinaisonSL;
         }
 
-        public void combinaisonScolariteTravailCanada(int niveauEtude, int pointTravail)
+        public int combinaisonScolariteTravailCanada(int niveauEtudeComplete, int pointTravailCanada)
         {
             int pointCombinaisonSTc = 0;
 
-            if (niveauEtude == 0 || niveauEtude == 1)
+            if (niveauEtudeComplete == 0 || niveauEtudeComplete == 1)
                 pointCombinaisonSTc = 0;
 
-            if (niveauEtude <= 2 && pointTravail == 2)
+            if (niveauEtudeComplete <= 2 && pointTravailCanada == 2)
                 pointCombinaisonSTc = 13;
 
-            if (niveauEtude <= 2 && pointTravail >= 3)
+            if (niveauEtudeComplete <= 2 && pointTravailCanada >= 3)
                 pointCombinaisonSTc = 25;
            
-            if (niveauEtude >= 6 && pointTravail == 2)
+            if (niveauEtudeComplete >= 6 && pointTravailCanada == 2)
                 pointCombinaisonSTc = 25;
 
-            if (niveauEtude >= 6 && pointTravail >= 3)
+            if (niveauEtudeComplete >= 6 && pointTravailCanada >= 3)
                 pointCombinaisonSTc = 50;
 
             PointTotal += pointCombinaisonSTc;
+
+            return pointCombinaisonSTc;
         }
 
         //À modifier
-        public void combinaisonLangueTravailEtranger(int pointLangue, int pointTravail)
+        public int combinaisonLangueTravailEtranger(int pointLangue, int pointTravailEtranger)
         {
             int pointCombinaisonLTe = 0;
 
-            if (pointTravail == 0 || pointTravail == 1)
+            if (pointTravailEtranger == 0 || pointTravailEtranger == 1)
                 pointCombinaisonLTe = 0;
 
-            if (pointLangue == 9 && (pointTravail == 2 || pointTravail == 3))
+            if (pointLangue == 9 && (pointTravailEtranger == 2 || pointTravailEtranger == 3))
                 pointCombinaisonLTe = 13;
 
-            if (pointLangue == 9 && (pointTravail == 2 || pointTravail == 3))
+            if (pointLangue == 9 && (pointTravailEtranger == 2 || pointTravailEtranger == 3))
                 pointCombinaisonLTe = 25;
 
-            if (pointLangue == 9 && pointTravail >= 4)
+            if (pointLangue == 9 && pointTravailEtranger >= 4)
                 pointCombinaisonLTe = 25;
 
-            if (pointLangue == 9 && pointTravail >= 4)
+            if (pointLangue == 9 && pointTravailEtranger >= 4)
                 pointCombinaisonLTe = 50;
 
             PointTotal += pointCombinaisonLTe;
+
+            return pointCombinaisonLTe;
         }
 
-        public void combinaisonTravailCanada_Etranger(int pointTravailEtranger, int pointTravailCanada)
+        public int combinaisonTravailCanada_Etranger(int anneeExperienceTravailEtranger, int anneeExperienceTravailCanada)
         {
             int pointCombinaisonTcTe = 0;
 
-            if (pointTravailEtranger == 0 || pointTravailEtranger == 1)
+            if (anneeExperienceTravailEtranger == 0 || anneeExperienceTravailEtranger == 1)
                 pointCombinaisonTcTe = 0;
 
-            if ((pointTravailEtranger == 2 || pointTravailEtranger == 3) && pointTravailCanada == 2)
+            if ((anneeExperienceTravailEtranger == 2 || anneeExperienceTravailEtranger == 3) && anneeExperienceTravailCanada == 2)
                 pointCombinaisonTcTe = 13;
 
-            if ((pointTravailEtranger == 2 || pointTravailEtranger == 3) && pointTravailCanada >= 3)
+            if ((anneeExperienceTravailEtranger == 2 || anneeExperienceTravailEtranger == 3) && anneeExperienceTravailCanada >= 3)
                 pointCombinaisonTcTe = 25;
 
-            if (pointTravailEtranger == 4 && pointTravailCanada == 2)
+            if (anneeExperienceTravailEtranger == 4 && anneeExperienceTravailCanada == 2)
                 pointCombinaisonTcTe = 25;
 
-            if (pointTravailEtranger == 4 && pointTravailCanada >= 3)
+            if (anneeExperienceTravailEtranger == 4 && anneeExperienceTravailCanada >= 3)
                 pointCombinaisonTcTe = 50;
 
             PointTotal += pointCombinaisonTcTe;
+
+            return pointCombinaisonTcTe;
         }
 
         //À modifier (Niveaux de compétence linguistique canadiens et dans le Canadian Language Benchmarks)
-        public void combinaisonLangueCertificatCompetence(int pointLangue, int pointCertificat)
+        public int combinaisonLangueCertificatCompetence(int pointLangue, int pointCertificat)
         {
             int pointCombinaisonCL = 0;
 
@@ -448,9 +467,11 @@ namespace TSR.DAL
                 pointCombinaisonCL = 50;
 
             PointTotal += pointCombinaisonCL;
+
+            return pointCombinaisonCL;
         }
 
-        public void designationProvince(bool aDesignation)
+        public int designationProvince(bool aDesignation)
         {
             int pointDesignation = 0;
 
@@ -460,9 +481,11 @@ namespace TSR.DAL
             }
     
             PointTotal += pointDesignation;
+
+            return pointDesignation;
         }
 
-        public void OffreEmploiAdmissible(bool aOffreEmploi, int gpeEmploi)
+        public int OffreEmploiAdmissible(bool aOffreEmploi, int gpeEmploi)
         {
             int pointOffreEmploi = 0;
 
@@ -479,9 +502,11 @@ namespace TSR.DAL
             }
 
             PointTotal += pointOffreEmploi;
+
+            return pointOffreEmploi;
         }
 
-        public void presenceFraternite(bool aFrere)
+        public int presenceFraternite(bool aFrere)
         {
             int pointFrere = 0;
             if (aFrere)
@@ -489,10 +514,12 @@ namespace TSR.DAL
                 pointFrere = 15;
             }
             PointTotal += pointFrere;
+
+            return pointFrere;
         }
 
         //À modifier
-        public void pointSuppLangueFrancais(bool testLinguitiqueValide, int pointLangueF)
+        public int pointSuppLangueFrancais(bool testLinguitiqueValide, int pointLangueF)
         {
             int suppLangue = 0;
 
@@ -505,9 +532,11 @@ namespace TSR.DAL
                 suppLangue = 25;
             }
             PointTotal += suppLangue;
+
+            return suppLangue;
         }
 
-        public void pointSuppDiplomeCanadien(int niveauEtude)
+        public int pointSuppDiplomeCanadien(int niveauEtude)
         {
             int suppDiplomeCanadien=0;
             if (niveauEtude == 0 || niveauEtude == 1)
@@ -524,12 +553,48 @@ namespace TSR.DAL
             }
 
             PointTotal += suppDiplomeCanadien;
+
+            return suppDiplomeCanadien;
         }
 
         // À paufiner
         public void calculerResultat()
         {
             this.PointAge(this.Age, this.ConjointAccompagne);
+            
+            this.pointageNiveauDeScolarite(this.AObtenuDiplomeCanadien,  this.EtudeComplete, this.ConjointAccompagne);
+           
+            this.pointageNiveauDeScolariteConjoint(this.AObtenuDiplomeCanadien, this.EtudeComplete);
+           
+            //int pointPremiereLangue = this.pointagePremiereLangue(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
+            
+            //this.pointageDeuxiemeLangue(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
+           
+            //this.pointageLangueConjoint(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
+           
+            int pointTravailCanada = this.pointageExperienceTravail(this.AnneeExperienceTravailCanada, this.ConjointAccompagne);
+           
+            this.pointageExperienceTravailConjoint(this.AnneeExperienceTravailConjointCanada);
+            
+           // int pointTravailEtranger = ;
+            
+            // this.combinaisonScolariteLangues(this.NiveauEtude, pointPremiereLangue);
+            
+            this.combinaisonScolariteTravailCanada(this.DescriptionEtudeCanadien, pointTravailCanada);
+
+            //this.combinaisonLangueTravailEtranger(pointPremiereLangue,  pointTravailEtranger);
+
+            this.combinaisonTravailCanada_Etranger(AnneeExperienceTravailEtranger, AnneeExperienceTravailCanada);
+
+            //this.combinaisonLangueCertificatCompetence( pointLangue, pointCertificat);
+
+            this.OffreEmploiAdmissible(AOffreEmploi, GroupeOffreEmploi);
+
+            this.presenceFraternite(this.PresenceFrere);
+            
+            //this.pointSuppLangueFrancais(testLinguistiqueValide, pointLangueF);
+
+            this.pointSuppDiplomeCanadien(this.DescriptionEtudeCanadien);
         }
     }
 }

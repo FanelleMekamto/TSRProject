@@ -4,7 +4,7 @@
              x:Class="TSR.Views.ConjointPage">
     <ContentPage.Content>
         <StackLayout>
-            <TableView Intent="Form">
+            <TableView Intent="Form" HasUnevenRows="True">
                 <TableRoot>
                     <TableSection Title="Détails conjoint de fait" TextColor="DarkGray">
                         <ViewCell>

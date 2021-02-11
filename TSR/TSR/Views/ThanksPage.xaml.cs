@@ -15,6 +15,9 @@ namespace TSR.Views
         public ThanksPage()
         {
             InitializeComponent();
+
+            //String pointTotal = (String) MainPage.Fiche.PointTotal;
+            pointTotal.Text = pointTotal.Text + " " + MainPage.Fiche.PointTotal;
         }
     }
 }

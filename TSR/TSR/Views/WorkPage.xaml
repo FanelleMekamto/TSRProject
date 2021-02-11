@@ -4,7 +4,7 @@
              x:Class="TSR.Views.WorkPage">
     <ContentPage.Content>
         <StackLayout>
-            <TableView Intent="Form">
+            <TableView Intent="Form" HasUnevenRows="True">
                 <TableRoot>
                     <TableSection Title="Année d'expérience" TextColor="DarkGray">
                         <ViewCell>
@@ -81,6 +81,11 @@
                             <StackLayout Padding="13, 0" IsVisible="false" x:Name="choixNiveauCompetence">
                                 <Label Text="Quel est le genre ou le niveau de compétence dans la CNP de l'offre d'emploi?" VerticalOptions="Center"/>
                                 <Label Text="Voir le détail des niveaux de compétence ici!"  x:Name="detailCompetence" VerticalOptions="Center"/>
+                                <Label Text=""  x:Name="descriptionCompetence" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerDetailCompetence" VerticalOptions="Center" 
+                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerDetailCompetence_SelectedIndexChanged" SelectedIndex="0">
+
+                                </Picker>
                                 <Picker x:Name="pickerNiveauCompétence" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerNiveauCompétence_SelectedIndexChanged"
                                    SelectedIndex="0">
