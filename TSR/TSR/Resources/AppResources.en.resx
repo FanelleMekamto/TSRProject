@@ -120,17 +120,38 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change Language</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="InputName" xml:space="preserve">
     <value>Enter your name</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="ProvinceSelected" xml:space="preserve">
+    <value>In which province do you want to immigrate?</value>
+  </data>
+  <data name="Quebec" xml:space="preserve">
+    <value>Quebec</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="SelectLanguage" xml:space="preserve">
     <value>Select Language</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>SUBMIT</value>
   </data>
   <data name="WelcomeText" xml:space="preserve">
     <value>Hello!</value>

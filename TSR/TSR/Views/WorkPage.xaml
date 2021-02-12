@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:resource="clr-namespace:TSR.Resources"
              x:Class="TSR.Views.WorkPage">
     <ContentPage.Content>
         <StackLayout>
@@ -77,20 +78,21 @@
                             </StackLayout>
                         </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Padding="13, 0" IsVisible="false" x:Name="choixNiveauCompetence">
+                        <ViewCell Tapped="ViewCell_Tapped">
+                            <StackLayout Padding="13, 0" IsVisible="false" x:Name="choixDetailCompetence">
                                 <Label Text="Quel est le genre ou le niveau de compétence dans la CNP de l'offre d'emploi?" VerticalOptions="Center"/>
                                 <Label Text="Voir le détail des niveaux de compétence ici!"  x:Name="detailCompetence" VerticalOptions="Center"/>
-                                <Label Text=""  x:Name="descriptionCompetence" VerticalOptions="Center"/>
-                                <Picker x:Name="pickerDetailCompetence" VerticalOptions="Center" 
-                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerDetailCompetence_SelectedIndexChanged" SelectedIndex="0">
+                                <Label Text="Description compétence"  x:Name="descriptionCompetence" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
 
-                                </Picker>
+                        <ViewCell>
+                            <StackLayout Padding="13, 0" IsVisible="false" x:Name="choixNiveauCompetence">
                                 <Picker x:Name="pickerNiveauCompétence" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerNiveauCompétence_SelectedIndexChanged"
                                    SelectedIndex="0">
                                     <Picker.Items>
-                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Selectionner le genre ou niveau de competence...</x:String>
                                         <x:String>Genre de compétence de 00 de la CNP</x:String>
                                         <x:String>Niveau de compétence A ou B ou tout genre autre que 00 de la CNP</x:String>
                                         <x:String>Niveau de compétence C ou D de la CNP</x:String>
@@ -98,7 +100,7 @@
                                 </Picker>
                             </StackLayout>
                         </ViewCell>
-
+                        
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="13, 0">
                                 <Label Text="Avez-vous un certificat de désignation d'une province ou d'un territoire?" VerticalOptions="Center"/>
@@ -134,7 +136,7 @@
                 </TableRoot>
             </TableView>
 
-            <Button Text="Suivant" Clicked="nextWorkPage_Clicked"
+            <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextWorkPage_Clicked"
                     x:Name="nextWorkPage"  VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"/>
 

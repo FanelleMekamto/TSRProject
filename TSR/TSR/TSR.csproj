@@ -31,6 +31,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\ChoixProvince.xaml.cs">
+      <DependentUpon>ChoixProvince.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OtherProvince.xaml.cs">
+      <DependentUpon>OtherProvince.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -59,19 +65,10 @@
     <EmbeddedResource Update="Views\LanguePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NotesCELPIPG.xaml">
+    <EmbeddedResource Update="Views\ChoixProvince.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NotesIELTS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\NotesTCF.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\NotesTEF.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\QuebecExpress.xaml">
+    <EmbeddedResource Update="Views\OtherProvince.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ScolaritePage.xaml">

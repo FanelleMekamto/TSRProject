@@ -69,7 +69,7 @@
             </TableRoot>
         </TableView>
 
-        <Button Text="Suivant" Clicked="nextContactPage_Clicked"
+        <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextContactPage_Clicked"
                     x:Name="nextContactPage"  VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"/>
         

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.ChoixProvince"
+             xmlns:resource="clr-namespace:TSR.Resources"
+             Title="Choix de province d'immigration">
+    <ContentPage.Content>
+        <StackLayout>
+                                <Label Text="{x:Static resource:AppResources.ProvinceSelected}"  />
+                                <Picker x:Name="pickerProvince" SelectedIndex="0" SelectedIndexChanged="pickerProvince_SelectedIndexChanged">
+                                    <Picker.Items>
+                                        <x:String>Quebec</x:String>
+                                        <x:String>Autre</x:String>
+                                    </Picker.Items>
+                                </Picker>
+
+
+            <Button Text="{x:Static resource:AppResources.Next}"
+                       Clicked="Button_Clicked"
+                       BackgroundColor="Black"
+                       TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

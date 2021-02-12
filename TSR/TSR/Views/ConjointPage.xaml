@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:TSR.Resources"
              x:Class="TSR.Views.ConjointPage">
     <ContentPage.Content>
         <StackLayout>
@@ -119,7 +120,7 @@
                 </TableRoot>
             </TableView>
 
-            <Button Text="Suivant" Clicked="nextConjointPage_Clicked"
+            <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextConjointPage_Clicked"
                     x:Name="nextWorkPage"  VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"/>
 

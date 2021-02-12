@@ -9,7 +9,7 @@ namespace TSR.DAL
         public int Age { get; set; }
         public int PointTotal { get; set; }
         public int DetailCompetence { get; set; }
-    public int EtudeComplete { get; set; }
+        public int EtudeComplete { get; set; }
         //public int NiveauEtude { get; set; }
         public int AnneeExperienceTravailCanada { get; set; }
         public int AnneeExperienceTravailEtranger { get; set; }

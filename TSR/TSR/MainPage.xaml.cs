@@ -25,8 +25,7 @@ namespace TSR
                 var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(pickerLanguage.SelectedItem.ToString())); ;
                 Thread.CurrentThread.CurrentUICulture = language;
                 AppResources.Culture = language;
-                //await Navigation.PushAsync(new ContactPage());
-                App.Current.MainPage = new NavigationPage(new ContactPage());
+                App.Current.MainPage = new NavigationPage(new ChoixProvince());
             }
         }
     }

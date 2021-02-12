@@ -29,7 +29,7 @@ namespace TSR.Views {
         private global::Xamarin.Forms.Picker pickerOffreEmploiValide;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout choixNiveauCompetence;
+        private global::Xamarin.Forms.StackLayout choixDetailCompetence;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label detailCompetence;
@@ -38,7 +38,7 @@ namespace TSR.Views {
         private global::Xamarin.Forms.Label descriptionCompetence;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerDetailCompetence;
+        private global::Xamarin.Forms.StackLayout choixNiveauCompetence;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker pickerNiveauCompétence;
@@ -59,10 +59,10 @@ namespace TSR.Views {
             pickerExperienceTravailEtranger = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerExperienceTravailEtranger");
             pickerCertificatCanada = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerCertificatCanada");
             pickerOffreEmploiValide = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerOffreEmploiValide");
-            choixNiveauCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "choixNiveauCompetence");
+            choixDetailCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "choixDetailCompetence");
             detailCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "detailCompetence");
             descriptionCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "descriptionCompetence");
-            pickerDetailCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerDetailCompetence");
+            choixNiveauCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "choixNiveauCompetence");
             pickerNiveauCompétence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerNiveauCompétence");
             pickerCertificatDesignationProvince = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerCertificatDesignationProvince");
             pickerPresenceFrere = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerPresenceFrere");

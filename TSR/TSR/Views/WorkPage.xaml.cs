@@ -68,6 +68,7 @@ namespace TSR.Views
             {
                 fiche.AOffreEmploi = true;
                 choixNiveauCompetence.IsVisible = true;
+                choixDetailCompetence.IsVisible = true;
             }
             else if (statutSelectedIndex == 2)
             {
@@ -110,13 +111,14 @@ namespace TSR.Views
             }
         }
 
-        private void pickerDetailCompetence_SelectedIndexChanged(object sender, EventArgs e)
+        private void ViewCell_Tapped(object sender, EventArgs e)
         {
             var page = new CpnDetailPage();
 
             page.CpnDetails.ItemSelected += (source, args) =>
             {
-                descriptionCompetence.Text = args.SelectedItem.ToString();
+                Cpn cpn = args.SelectedItem as Cpn;
+                descriptionCompetence.Text = cpn.Name;
                 Navigation.PopAsync();
                 fiche.DetailCompetence = args.SelectedItemIndex;
             };

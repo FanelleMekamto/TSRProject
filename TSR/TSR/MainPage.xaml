@@ -14,7 +14,7 @@
                 </Picker.Items>
             </Picker>
 
-            <Button Text="{x:Static resource:AppResources.Save}"
+            <Button Text="{x:Static resource:AppResources.Next}"
                        Clicked="OnUpdateLangugeClicked"
                        BackgroundColor="Black"
                        TextColor="White"/>
