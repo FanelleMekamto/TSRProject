@@ -89,5 +89,10 @@ namespace TSR.Views
                 fiche.ConjointAccompagne = true;
             }
         }
+
+        private void phoneNumber_Completed(object sender, EventArgs e)
+        {
+            nextContactPage.IsEnabled = true;
+        }
     }
 }

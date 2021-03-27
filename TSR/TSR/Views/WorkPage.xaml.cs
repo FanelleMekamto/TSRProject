@@ -27,7 +27,7 @@ namespace TSR.Views
             }
             else
             {
-                await this.Navigation.PushAsync(new EndProcessPage());
+                await this.Navigation.PushAsync(new AutreRenseignementEtudiant());
             }
         }
 
@@ -67,7 +67,7 @@ namespace TSR.Views
             if (statutSelectedIndex == 1)
             {
                 fiche.AOffreEmploi = true;
-                choixNiveauCompetence.IsVisible = true;
+                //choixNiveauCompetence.IsVisible = true;
                 choixDetailCompetence.IsVisible = true;
             }
             else if (statutSelectedIndex == 2)
@@ -76,12 +76,12 @@ namespace TSR.Views
             }
         }
 
-        private void pickerNiveauCompétence_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void pickerNiveauCompétence_SelectedIndexChanged(object sender, EventArgs e)
         {
             //var ValiditeTest = pickerValiditeTest.Items[pickerValiditeTest.SelectedIndex];
             var statutSelectedIndex = pickerNiveauCompétence.SelectedIndex;
             fiche.NiveauCompetenceOffre = statutSelectedIndex;
-        }
+        }*/
 
         private void pickerCertificatDesignationProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace TSR.Views
             }
         }
 
-        private void ViewCell_Tapped(object sender, EventArgs e)
+        /*private void ViewCell_Tapped(object sender, EventArgs e)
         {
             var page = new CpnDetailPage();
 
@@ -124,6 +124,6 @@ namespace TSR.Views
             };
 
             Navigation.PushAsync(page);
-        }
+        }*/
     }
 }

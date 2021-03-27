@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TSR.Views.ThanksPage">
+             x:Class="TSR.Views.ThanksPage"
+             Title="Soumis avec Succès!">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Votre candidature a été soumis avec succès. Nous vous contacterons dans de bref délais pour vous donner suite." />
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                                    HorizontalOptions="CenterAndExpand">
+            <Label Text="Votre candidature a été soumis avec succès. Nous v ous contacterons dans de bref délais pour vous donner suite." />
             <Label Text="Nous vous souhaitons la meilleure des chances pour la suite. " />
-            <Label x:Name="pointTotal" Text="Point Total : " />
+            <Label x:Name="pointTotal" Text="Point Total : " TextColor="Blue" FontFamily="Calibri" FontAttributes="Bold"/>
             <Label Text="La direction de TSR " />
+
+            <Button Text="Retour Page Accueil" Clicked="retourPageAccueil_Clicked"
+                    x:Name="RetourAccueil"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:TSR.Resources"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             Title="Niveau Linguistique"
+             x:Class="TSR.Views.NiveauLangagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Form" HasUnevenRows="True">
+                <TableRoot Title="Vous devrez soumettre des résultats de test linguistique qui datent de moins de deux ans">
+                    <TableSection Title="Vos habiletés en Francais " TextColor="DarkGray">
+                        <!--<TextCell Text=" Les langues officielles du Canada sont le français et l'anglais" 
+                                  Detail="Vous devez soumettre des résultats de test linguistique qui datent de moins de deux ans" />-->
+
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Lire:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerLireFrancais" VerticalOptions="Center" 
+                                       HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerLireFrancais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Ecrire:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerEcrireFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcrireFrancais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Parler:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerParlerFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerParlerFrancais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Ecouter:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerEcouterFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcouterFrancais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </TableSection>
+
+                    <TableSection Title="Vos habiletés en Anglais" TextColor="DarkGray">
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Lire:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerLireAnglais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerLireAnglais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Ecrire:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerEcrireAnglais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcrireAnglais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Parler:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerParlerAnglais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerParlerAnglais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Padding="13, 0">
+                                    <Label Text="Ecouter:" VerticalOptions="Center"/>
+                                    <Picker x:Name="pickerEcouterAnglais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcouterAnglais_SelectedIndexChanged" SelectedIndex="0">
+
+                                    </Picker>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button IsEnabled="True" Text="{x:Static resource:AppResources.Next}" Clicked="nextNiveauLanguePage_Clicked"
+                    x:Name="nextNiveauLanguePage"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

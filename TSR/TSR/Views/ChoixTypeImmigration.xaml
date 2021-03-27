@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSR.Views.ChoixTypeImmigration"
+             xmlns:resource="clr-namespace:TSR.Resources"
+             Title="Choix Type d'immigration">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="{x:Static resource:AppResources.TypeImmigrationSelected}"  />
+            <Picker x:Name="pickerImmigration" SelectedIndex="0" SelectedIndexChanged="pickerImmigration_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Étudiant étranger</x:String>
+                    <x:String>Travailleur qualifié</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Button Text="{x:Static resource:AppResources.Next}"
+                       Clicked="Button_Clicked"
+                       BackgroundColor="Black"
+                       TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

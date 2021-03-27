@@ -23,42 +23,46 @@ namespace TSR.Views {
         private global::Xamarin.Forms.Picker pickerExperienceTravailConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerLangueOfficielleConjoint;
+        private global::Xamarin.Forms.Picker pickerLireFrancaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerTestLinguistiqueConjoint;
+        private global::Xamarin.Forms.Picker pickerEcrireFrancaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout choixNotesConjoint;
+        private global::Xamarin.Forms.Picker pickerParlerFrancaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerExpOraleValueConjoint;
+        private global::Xamarin.Forms.Picker pickerEcouterFrancaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerComOralValueConjoint;
+        private global::Xamarin.Forms.Picker pickerLireAnglaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerComEcritValueConjoint;
+        private global::Xamarin.Forms.Picker pickerEcrireAnglaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker pickerExpEcriteValueConjoint;
+        private global::Xamarin.Forms.Picker pickerParlerAnglaisConjoint;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button nextWorkPage;
+        private global::Xamarin.Forms.Picker pickerEcouterAnglaisConjoint;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Button nextConjointPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ConjointPage));
             pickerEtudeCompleteConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerEtudeCompleteConjoint");
             pickerExperienceTravailConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerExperienceTravailConjoint");
-            pickerLangueOfficielleConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerLangueOfficielleConjoint");
-            pickerTestLinguistiqueConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerTestLinguistiqueConjoint");
-            choixNotesConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "choixNotesConjoint");
-            pickerExpOraleValueConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerExpOraleValueConjoint");
-            pickerComOralValueConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerComOralValueConjoint");
-            pickerComEcritValueConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerComEcritValueConjoint");
-            pickerExpEcriteValueConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerExpEcriteValueConjoint");
-            nextWorkPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "nextWorkPage");
+            pickerLireFrancaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerLireFrancaisConjoint");
+            pickerEcrireFrancaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerEcrireFrancaisConjoint");
+            pickerParlerFrancaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerParlerFrancaisConjoint");
+            pickerEcouterFrancaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerEcouterFrancaisConjoint");
+            pickerLireAnglaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerLireAnglaisConjoint");
+            pickerEcrireAnglaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerEcrireAnglaisConjoint");
+            pickerParlerAnglaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerParlerAnglaisConjoint");
+            pickerEcouterAnglaisConjoint = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "pickerEcouterAnglaisConjoint");
+            nextConjointPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "nextConjointPage");
         }
     }
 }

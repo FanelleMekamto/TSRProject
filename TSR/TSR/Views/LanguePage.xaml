@@ -7,10 +7,6 @@
              x:Class="TSR.Views.LanguePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblPointTotal"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
             <TableView Intent="Form" HasUnevenRows="True">
                 <TableRoot>
                     <TableSection Title="Vos tests linguistiques" TextColor="DarkGray">
@@ -18,7 +14,7 @@
                                   Detail="Vous devez soumettre des résultats de test linguistique qui datent de moins de deux ans" />
 
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
                                 <Label Text="Quel est votre premiere langue officielle?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerLangueOfficielle" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerLangueOfficielle_SelectedIndexChanged" SelectedIndex="0">
@@ -32,7 +28,7 @@
                         </ViewCell>
                         
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
                                 <Label Text="Vos résultats de test linguistique ont-ils moins de deux ans?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerValiditeTest" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerValiditeTest_SelectedIndexChanged" SelectedIndex="0">
@@ -46,7 +42,7 @@
                         </ViewCell>
 
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" IsVisible="false" Padding="13, 0" x:Name="choixTestLinguistiqueOfficiel">
+                            <StackLayout Orientation="Vertical" IsVisible="false" Padding="13, 0" x:Name="choixTestLinguistiqueOfficiel">
                                 <Label Text="Quel test linguistique avez-vous passé pour votre première langue officielle?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerTestLinguistiqueOfficiel" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerTestLinguistiqueOfficiel_SelectedIndexChanged" SelectedIndex="0">
@@ -64,34 +60,34 @@
                         <!-- <local:LangueCell /> -->
 
                         <ViewCell>
-                            <StackLayout VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotes">
+                            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotes">
                                 <Label Text="Entrez vos notes de test pour :" />
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Expression Orale :" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Expression Orale :" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerExpOraleValue" VerticalOptions="Center" 
                                             HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpOraleValue_SelectedIndexChanged" SelectedIndex="0">
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Compehension de l'oral:" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Compehension de l'oral:" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerComOralValue" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComOralValue_SelectedIndexChanged" SelectedIndex="0">
 
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout  Padding="13, 0">
-                                    <Label Text="Comprehension de l'écrit:" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Comprehension de l'écrit:" VerticalOptions="Center" />
                                     <Picker x:Name="pickerComEcritValue" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComEcritValue_SelectedIndexChanged" SelectedIndex="0">
 
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Expression écrite :" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Expression écrite :" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerExpEcriteValue" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpEcriteValue_SelectedIndexChanged" SelectedIndex="0">
 
@@ -101,7 +97,7 @@
                         </ViewCell>
 
                         <ViewCell>
-                            <StackLayout IsVisible="true" Padding="13, 0" x:Name="choixAutreTest">
+                            <StackLayout Orientation="Vertical" IsVisible="true" Padding="13, 0" x:Name="choixAutreTest">
                                 <Label Text="Avez-vous d'autres résultats linguistiques?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerAutreTestLinguistique" VerticalOptions="Center" 
                                 HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerAutreTestLinguistique_SelectedIndexChanged" SelectedIndex="0">
@@ -111,34 +107,34 @@
                         </ViewCell>
 
                         <ViewCell>
-                            <StackLayout VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotesAutresTest">
+                            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotesAutresTest">
                                 <Label Text="Entrez vos notes de test pour :" />
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Expression Orale :" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Expression Orale :" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerExpOraleValueAutre" VerticalOptions="Center" 
                                             HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpOraleValueAutre_SelectedIndexChanged" SelectedIndex="0">
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Compehension de l'oral:" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical"  Padding="13, 0">
+                                    <Label Text="Compehension de l'oral:" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerComOralValueAutre" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComOralValueAutre_SelectedIndexChanged" SelectedIndex="0">
 
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout  Padding="13, 0">
-                                    <Label Text="Comprehension de l'écrit:" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical"  Padding="13, 0">
+                                    <Label Text="Comprehension de l'écrit:" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerComEcritValueAutre" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComEcritValueAutre_SelectedIndexChanged" SelectedIndex="0">
 
                                     </Picker>
                                 </StackLayout>
 
-                                <StackLayout Padding="13, 0">
-                                    <Label Text="Expression écrite :" VerticalOptions="Center" TextColor="Red"/>
+                                <StackLayout Orientation="Vertical" Padding="13, 0">
+                                    <Label Text="Expression écrite :" VerticalOptions="Center"/>
                                     <Picker x:Name="pickerExpEcriteValueAutre" VerticalOptions="Center" 
                                     HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpEcriteValueAutre_SelectedIndexChanged" SelectedIndex="0">
 
@@ -152,7 +148,7 @@
                 </TableRoot>
             </TableView>
 
-            <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextLanguePage_Clicked"
+            <Button IsEnabled="True" Text="{x:Static resource:AppResources.Next}" Clicked="nextLanguePage_Clicked"
                     x:Name="nextContactPage"  VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"/>
         </StackLayout>

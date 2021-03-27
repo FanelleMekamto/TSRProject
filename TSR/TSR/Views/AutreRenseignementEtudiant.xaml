@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:resource="clr-namespace:TSR.Resources"
+             Title="Autres renseignements"
+             x:Class="TSR.Views.AutreRenseignementEtudiant">
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical" >
+            <TableView Intent="Form" HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection Title="Informations complémentaires" TextColor="DarkGray">
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
+                                <Label Text="Avez-vous au moins 25000$ CAD en liquide?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerFunds" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerFunds_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
+                                <Label Text="Specifier le montant en dollar Canadian dont vous disposez pour vos études au Canada" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerDetailFunds" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerDetailFunds_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Moins de 25000$</x:String>
+                                        <x:String>25000$ - 40000$</x:String>
+                                        <x:String>40000$ - 55000$</x:String>
+                                        <x:String>55000$ - 70000$</x:String>
+                                        <x:String>70000$ - 85000$</x:String>
+                                        <x:String>85000$ - 100000$</x:String>
+                                        <x:String>Plus de 100000</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Informations complémentaires" TextColor="DarkGray">
+                    <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
+                                <Label Text="Est-ce que vous ou votre époux/conjoint de fait (si celui-ci vous accompagne au Canada) 
+                                       avez au moins un frère ou une sœur habitant au Canada qui est un citoyen ou un résident permanent?" 
+                                       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                <Picker x:Name="pickerPresenceFrere" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerPresenceFrere_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
+                                <Label Text="vous a-t-on déjà refusé un visa pour le Canada?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerRefuseVisa" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerRefuseVisa_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
+                                <Label Text="avez-vous déjà été incarcéré ou reconnu coupable d'une infraction?" VerticalOptions="Center"/>
+                                <Picker x:Name="pickerInfraction" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerInfraction_SelectedIndexChanged"
+                                   SelectedIndex="0">
+                                    <Picker.Items>
+                                        <x:String>Selectionner...</x:String>
+                                        <x:String>Oui</x:String>
+                                        <x:String>Non</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextAutreRenseignement_Clicked"
+                    x:Name="nextAutreRenseignement"  VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

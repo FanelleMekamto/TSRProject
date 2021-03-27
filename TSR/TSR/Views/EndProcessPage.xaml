@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resource="clr-namespace:TSR.Resources"
-             x:Class="TSR.Views.EndProcessPage">
+             x:Class="TSR.Views.EndProcessPage"
+             Title="Vérification des entrées">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Vous êtes sur le pont de terminer le processus de préselection."
+        <StackLayout Orientation="Vertical">
+            <Label Text="Vous êtes sur le point de terminer le processus de préselection."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 

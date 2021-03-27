@@ -153,6 +153,9 @@
   <data name="Submit" xml:space="preserve">
     <value>SUBMIT</value>
   </data>
+  <data name="TypeImmigrationSelected" xml:space="preserve">
+    <value>What type of immigration would you like to do?</value>
+  </data>
   <data name="WelcomeText" xml:space="preserve">
     <value>Hello!</value>
   </data>

@@ -6,12 +6,12 @@
              Title="Coordonnées personnelles"
              x:Class="TSR.Views.ContactPage">
     <StackLayout>
-        <TableView Intent="Form">
+        <TableView Intent="Form" HasUnevenRows="True">
             <TableRoot>
                 <TableSection Title="Renseignements personnelles (* Champs obligatoires)" TextColor="DarkGray">
                     <EntryCell Label="Nom*" Placeholder="Entrez votre nom" LabelColor="Red"/>
                     <EntryCell Label="Prenom*" Placeholder="Entrez votre prénom" LabelColor="Red"/>
-                    <EntryCell Label="Telephone*" Placeholder="Entrez votre telephone principal" LabelColor="Red" Keyboard="Telephone"/>
+                    <EntryCell Completed="phoneNumber_Completed" x:Name="phoneNumber" Label="Telephone*" Placeholder="Entrez votre telephone principal" LabelColor="Red" Keyboard="Telephone"/>
                     <EntryCell Label="Email*" Placeholder="Entrez votre courriel" LabelColor="Red" Keyboard="Email"/>
                     <ViewCell Tapped="ViewCell_Tapped">
                         <StackLayout Orientation="Horizontal" Padding="13, 0">
@@ -23,10 +23,10 @@
                 </TableSection>
                 <TableSection Title="État matrimonial" TextColor="DarkGray">
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="13, 0">
+                        <StackLayout Orientation="Vertical" Padding="13, 0">
                             <Label Text="Quel est votre état Matrimonial?" VerticalOptions="Center"/>
                             <Picker x:Name="pickerStatutMatrimonial" VerticalOptions="Center" 
-                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerStatutMatrimonial_SelectedIndexChanged">
+                                   HorizontalOptions="FillAndExpand" SelectedItem="0" SelectedIndex="0" SelectedIndexChanged="pickerStatutMatrimonial_SelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>Marié(e)</x:String>
                                     <x:String>En concubinage(1 an au moins)</x:String>
@@ -41,10 +41,10 @@
                     </ViewCell>
 
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixStatutConjoint">
+                        <StackLayout Orientation="Vertical" Padding="13, 0" IsVisible="false" x:Name="choixStatutConjoint">
                             <Label Text="Votre époux ou conjoint de fait est-il citoyen ou resident permanent du Canada?" VerticalOptions="Center"/>
                             <Picker x:Name="pickerStatutConjoint" VerticalOptions="Center" 
-                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerStatutConjoint_SelectedIndexChanged">
+                                   HorizontalOptions="FillAndExpand"  SelectedItem="0" SelectedIndex="0" SelectedIndexChanged="pickerStatutConjoint_SelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>Oui</x:String>
                                     <x:String>Non</x:String>
@@ -54,10 +54,10 @@
                     </ViewCell>
 
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixAccompagner">
+                        <StackLayout Orientation="Vertical" Padding="13, 0" IsVisible="false" x:Name="choixAccompagner">
                             <Label Text="Votre époux ou conjoint de fait vous accompagnera t-il au Canada?" VerticalOptions="Center"/>
                             <Picker x:Name="pickerAcommpagner" VerticalOptions="Center" 
-                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerAcommpagner_SelectedIndexChanged">
+                                   HorizontalOptions="FillAndExpand"  SelectedItem="0" SelectedIndex="0" SelectedIndexChanged="pickerAcommpagner_SelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>Oui</x:String>
                                     <x:String>Non</x:String>
@@ -69,10 +69,9 @@
             </TableRoot>
         </TableView>
 
-        <Button Text="{x:Static resource:AppResources.Next}" Clicked="nextContactPage_Clicked"
+        <Button IsEnabled="False" Text="{x:Static resource:AppResources.Next}" Clicked="nextContactPage_Clicked"
                     x:Name="nextContactPage"  VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"/>
-        
-        
+
     </StackLayout>
 </ContentPage>

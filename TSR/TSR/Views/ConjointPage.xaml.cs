@@ -13,27 +13,42 @@ namespace TSR.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConjointPage : ContentPage
     {
-        FicheCandidat fiche = MainPage.Fiche;
+        FicheCandidat fiche = MainPage.Fiche; 
 
-        int pickerExpOraleConjointSelectedIndex, pickerComOralConjointSelectedIndex, pickerComEcritConjointSelectedIndex, pickerExpEcriteConjointSelectedIndex;
+        //int pickerLireFrancaisConjointSelectedIndex, pickerEcrireFrancaisConjointSelectedIndex, pickerEcouterFrancaisConjointSelectedIndex, pickerParlerFrancaisConjointSelectedIndex;
+        //int pickerLireAnglaisConjointSelectedIndex, pickerEcrireAnglaisConjointSelectedIndex, pickerEcouterAnglaisConjointSelectedIndex, pickerParlerAnglaisConjointSelectedIndex;
 
+       /* private void selectedValuePicker()
+        {
+            pickerLireFrancaisConjointSelectedIndex = pickerLireFrancaisConjoint.SelectedIndex;
+            pickerEcrireFrancaisConjointSelectedIndex = pickerEcrireFrancaisConjoint.SelectedIndex;
+            pickerEcouterFrancaisConjointSelectedIndex = pickerEcouterFrancaisConjoint.SelectedIndex;
+            pickerParlerFrancaisConjointSelectedIndex = pickerParlerFrancaisConjoint.SelectedIndex;
+            pickerLireAnglaisConjointSelectedIndex = pickerLireAnglaisConjoint.SelectedIndex;
+            pickerEcrireAnglaisConjointSelectedIndex = pickerEcrireAnglaisConjoint.SelectedIndex;
+            pickerEcouterAnglaisConjointSelectedIndex = pickerEcouterAnglaisConjoint.SelectedIndex;
+            pickerParlerAnglaisConjointSelectedIndex = pickerParlerAnglaisConjoint.SelectedIndex;
+        }*/
         private void initPicker()
         {
-            pickerExpOraleConjointSelectedIndex = pickerExpOraleValueConjoint.SelectedIndex;
-            pickerComOralConjointSelectedIndex = pickerComOralValueConjoint.SelectedIndex;
-            pickerComEcritConjointSelectedIndex = pickerComEcritValueConjoint.SelectedIndex;
-            pickerExpEcriteConjointSelectedIndex = pickerExpEcriteValueConjoint.SelectedIndex;
+            pickerLireFrancaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerEcrireFrancaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerEcouterFrancaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerParlerFrancaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerLireAnglaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerEcrireAnglaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerEcouterAnglaisConjoint.ItemsSource = Data.ListNiveauLangage;
+            pickerParlerAnglaisConjoint.ItemsSource = Data.ListNiveauLangage; 
         }
         public ConjointPage()
         {
             InitializeComponent();
-
-            pickerEtudeCompleteConjoint.ItemsSource = Data.ListNiveauScolarite;
+            initPicker();
         }
 
         async void nextConjointPage_Clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PushAsync(new EndProcessPage());
+            await this.Navigation.PushAsync(new AutreRenseignementEtudiant());
         }
 
         private void pickerEtudeCompleteConjoint_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,189 +63,52 @@ namespace TSR.Views
             fiche.AnneeExperienceTravailConjointCanada = statutSelectedIndex;
         }
 
-        private void pickerLangueOfficielleConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerLireFrancaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var statutSelectedIndex = pickerEtudeCompleteConjoint.SelectedIndex;
-            fiche.LangueOfficielleConjoint = statutSelectedIndex;
+            var statutSelectedIndex = pickerLireFrancaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
         }
 
-        private void pickerTestLinguistiqueConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerEcrireFrancaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var statutSelectedIndex = pickerTestLinguistiqueConjoint.SelectedIndex;
-
-            if (statutSelectedIndex != 0)
-            {
-                choixNotesConjoint.IsVisible = true;
-            }
-
-            switch (statutSelectedIndex)
-            {
-                case 1:
-                    pickerExpOraleValueConjoint.ItemsSource = Data.listNotesCELPIPG;
-                    pickerComOralValueConjoint.ItemsSource = Data.listNotesCELPIPG;
-                    pickerComEcritValueConjoint.ItemsSource = Data.listNotesCELPIPG;
-                    pickerExpEcriteValueConjoint.ItemsSource = Data.listNotesCELPIPG;
-                    break;
-                case 2:
-                    pickerExpOraleValueConjoint.ItemsSource = Data.listNotes_EOEE_IELTS;
-                    pickerComOralValueConjoint.ItemsSource = Data.listNotes_CO_IELTS;
-                    pickerComEcritValueConjoint.ItemsSource = Data.listNotes_CE_IELTS;
-                    pickerExpEcriteValueConjoint.ItemsSource = Data.listNotes_EOEE_IELTS;
-                    break;
-                case 3:
-                    pickerExpOraleValueConjoint.ItemsSource = Data.listNotes_EOEE_TEF;
-                    pickerComOralValueConjoint.ItemsSource = Data.listNotes_CO_TEF;
-                    pickerComEcritValueConjoint.ItemsSource = Data.listNotes_CE_TEF;
-                    pickerExpEcriteValueConjoint.ItemsSource = Data.listNotes_EOEE_TEF;
-                    break;
-                case 4:
-                    pickerExpOraleValueConjoint.ItemsSource = Data.listNotes_EOEE_TCF;
-                    pickerComOralValueConjoint.ItemsSource = Data.listNotes_CO_TCF;
-                    pickerComEcritValueConjoint.ItemsSource = Data.listNotes_CE_TCF;
-                    pickerExpEcriteValueConjoint.ItemsSource = Data.listNotes_EOEE_TCF;
-                    break;
-            }
+            var statutSelectedIndex = pickerEcrireFrancaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);         
         }
 
-        private void pickerExpOraleValueConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerParlerFrancaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            initPicker();
-
-            switch (pickerExpOraleConjointSelectedIndex)
-            {
-                case 0:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 1:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 2:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 3:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 4:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 5:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 6:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 7:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-                case 8:
-                    fiche.NoteLinguistique = pickerExpOraleConjointSelectedIndex;
-                    break;
-            }
+            var statutSelectedIndex = pickerParlerFrancaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
         }
 
-        private void pickerComOralValueConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerEcouterFrancaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            initPicker();
-            switch (pickerComOralConjointSelectedIndex)
-            {
-                case 0:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 1:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 2:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 3:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 4:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 5:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 6:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 7:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-                case 8:
-                    fiche.NoteLinguistique = pickerComOralConjointSelectedIndex;
-                    break;
-            }
+            var statutSelectedIndex = pickerEcouterFrancaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
         }
 
-        private void pickerComEcritValueConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerLireAnglaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            initPicker();
-            switch (pickerComEcritConjointSelectedIndex)
-            {
-                case 0:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 1:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 2:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 3:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 4:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 5:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 6:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 7:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-                case 8:
-                    fiche.NoteLinguistique = pickerComEcritConjointSelectedIndex;
-                    break;
-            }
+            var statutSelectedIndex = pickerLireAnglaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
         }
 
-        private void pickerExpEcriteValueConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        private void pickerEcrireAnglaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            initPicker();
-            switch (pickerExpEcriteConjointSelectedIndex)
-            {
-                case 0:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 1:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 2:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 3:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 4:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 5:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 6:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 7:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-                case 8:
-                    fiche.NoteLinguistique = pickerExpEcriteConjointSelectedIndex;
-                    break;
-            }
+            var statutSelectedIndex = pickerEcrireAnglaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
+        }
+
+        private void pickerParlerAnglaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var statutSelectedIndex = pickerParlerAnglaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
+        }
+
+        private void pickerEcouterAnglaisConjoint_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var statutSelectedIndex = pickerEcouterAnglaisConjoint.SelectedIndex;
+            fiche.PointEnParlerConjoint = fiche.pointLangueCategorie(statutSelectedIndex);
         }
     }
 }

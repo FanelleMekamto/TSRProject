@@ -59,12 +59,8 @@ namespace TSR.Views
 
         async private void nextScolaritePage_Clicked(object sender, EventArgs e)
         {
-            // rajouter le champ descriptionDiplome Canadien dans la methode de scolarite
             fiche.pointageNiveauDeScolarite(fiche.AObtenuDiplomeCanadien, fiche.EtudeComplete, fiche.ConjointAccompagne);
-
-            await DisplayAlert("Point total actuel", MainPage.Fiche.PointTotal.ToString(), "OK");
-
-            await this.Navigation.PushAsync(new LanguePage());
+            await this.Navigation.PushAsync(new NiveauLangagePage());
         }
     }
 

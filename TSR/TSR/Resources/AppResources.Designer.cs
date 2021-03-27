@@ -169,6 +169,15 @@ namespace TSR.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What type of immigration would you like to do?.
+        /// </summary>
+        internal static string TypeImmigrationSelected {
+            get {
+                return ResourceManager.GetString("TypeImmigrationSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello!.
         /// </summary>
         internal static string WelcomeText {

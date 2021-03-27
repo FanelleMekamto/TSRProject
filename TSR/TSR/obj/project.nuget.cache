@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o4Fv6JKoNlgB+2bbnONpf8IKkLQeXsAIjlF1vGEua//UfQHVkyFXN+10Ljy1kYe1gZwjfD/OooMimtgsLYLazQ==",
+  "dgSpecHash": "Omx3DqJH0ewPTnAayGhU1wSsCcFWPkDl+Q4P7nC/hhoVWfUBs6fTV3YE1b7zx4FQ0TTP+Wc9ET80VvrxczbZaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Fanelle\\source\\repos\\TSR\\TSR\\TSR\\TSR.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Fanelle\\.nuget\\packages\\aspose.cells\\21.3.0\\aspose.cells.21.3.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\csvhelper\\19.0.0\\csvhelper.19.0.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
@@ -11,8 +12,13 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\syncfusion.licensing\\18.4.0.48\\syncfusion.licensing.18.4.0.48.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\syncfusion.xamarin.compression\\18.4.0.48\\syncfusion.xamarin.compression.18.4.0.48.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\syncfusion.xamarin.xlsio\\18.4.0.48\\syncfusion.xamarin.xlsio.18.4.0.48.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Fanelle\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0\\system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
+    "C:\\Users\\Fanelle\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\xamarin.essentials\\1.6.0\\xamarin.essentials.1.6.0.nupkg.sha512",
     "C:\\Users\\Fanelle\\.nuget\\packages\\xamarin.forms\\5.0.0.1874\\xamarin.forms.5.0.0.1874.nupkg.sha512"

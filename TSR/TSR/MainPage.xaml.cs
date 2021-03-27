@@ -5,6 +5,7 @@ using TSR.Resources;
 using Xamarin.Forms;
 using TSR.Views;
 using TSR.DAL;
+using System.Diagnostics;
 
 namespace TSR
 {
@@ -25,8 +26,14 @@ namespace TSR
                 var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(pickerLanguage.SelectedItem.ToString())); ;
                 Thread.CurrentThread.CurrentUICulture = language;
                 AppResources.Culture = language;
-                App.Current.MainPage = new NavigationPage(new ChoixProvince());
+                App.Current.MainPage = new NavigationPage(new ChoixTypeImmigration());
             }
         }
+
+        /*protected override void OnSleep()
+        {
+            Debug.WriteLine("OnSleep");
+
+        }*/
     }
 }

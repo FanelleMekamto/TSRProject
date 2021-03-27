@@ -30,5 +30,8 @@ C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\EndProc
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\ThanksPage.xaml.g.cs
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\WorkPage.xaml.g.cs
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\CpnDetailPage.xaml.g.cs
-C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\ChoixProvince.xaml.g.cs
 C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\OtherProvince.xaml.g.cs
+C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\NiveauLangagePage.xaml.g.cs
+C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\ChoixTypeImmigration.xaml.g.cs
+C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\AutreRenseignementEtudiant.xaml.g.cs
+C:\Users\Fanelle\source\repos\TSR\TSR\TSR\obj\Debug\netstandard2.0\Views\AutreRenseignementTravailleur.xaml.g.cs

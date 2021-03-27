@@ -6,17 +6,37 @@ namespace TSR.DAL
 {
     public class FicheCandidat
     {
+        public int TypeImmigration { get; set; }
         public int Age { get; set; }
         public int PointTotal { get; set; }
         public int DetailCompetence { get; set; }
         public int EtudeComplete { get; set; }
-        //public int NiveauEtude { get; set; }
         public int AnneeExperienceTravailCanada { get; set; }
         public int AnneeExperienceTravailEtranger { get; set; }
         public int AnneeExperienceTravailConjointCanada { get; set; }
         public int NiveauCompetenceOffre { get; set; }
         public int LangueOfficielle { get; set; }
         public int LangueOfficielleConjoint { get; set; }
+        public int PointFrParler { get; set; }
+        public int PointFrLire { get; set; }
+        public int PointFrEcrire { get; set; }
+        public int PointFrEcouter { get; set; }
+
+        public int PointEnEcouter { get; set; }
+        public int PointEnParler { get; set; }
+        public int PointEnLire { get; set; }
+        public int PointEnEcrire { get; set; }
+
+        public int PointFrParlerConjoint { get; set; }
+        public int PointFrLireConjoint { get; set; }
+        public int PointFrEcrireConjoint { get; set; }
+        public int PointFrEcouterConjoint { get; set; }
+
+        public int PointEnEcouterConjoint { get; set; }
+        public int PointEnParlerConjoint { get; set; }
+        public int PointEnLireConjoint { get; set; }
+        public int PointEnEcrireConjoint { get; set; }
+
         public Boolean AObtenuDiplomeCanadien { get; set; }
         public Boolean ACertificatCompetence { get; set; }
         public Boolean AOffreEmploi { get; set; }
@@ -29,8 +49,30 @@ namespace TSR.DAL
         public int NoteLinguistiqueConjoint { get; set; }
         public Boolean ConjointAccompagne { get; set; }
         public int EtudeCompleteConjoint { get; set; }
-        
-        public void  PointAge(int age, Boolean conjointAccompagne)
+
+        public int pointLangueCategorie(int selectedIndex)
+        {
+            int point=0;
+            switch (selectedIndex)
+            {
+                case 0:
+                case 4:
+                    point= 0;
+                    break;
+                case 1:
+                    point = 1;
+                    break;
+                case 2:
+                    point = 2;
+                    break;
+                case 3:
+                    point = 3;
+                    break;
+            }
+            return point;
+        }
+
+        public void PointAge(int age, Boolean conjointAccompagne)
         {
             int pointAge = 0;
                 switch (age)
@@ -177,122 +219,114 @@ namespace TSR.DAL
             PointTotal += pointEtude;
         }
 
+        public int sommeNoteCategorieLangue(int PointEcouter, int PointEcrire, int PointLire, int PointParler)
+        {
+            return PointEcouter + PointEcrire + PointLire + PointParler;
+        }
+
         //To modify
-        public int pointagePremiereLangue(Boolean expire, int choixTest, int noteEO, int notesCO,int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointageLangueFrancais(int noteFrancais, Boolean conjointAccompagne)
         {
-            int pointTestPremiereLangue = 0;
+            int pointTestLangueFrancais = 0;
 
-            if (!expire)
+            if (noteFrancais < 4)
             {
-                switch (choixTest)
-                {
-                    case 1:
-                        pointTestPremiereLangue = 0;
-                        break;
-                    case 2:
-                        pointTestPremiereLangue = conjointAccompagne ? 30 : 28;
-                        break;
-                    case 3:
-                        pointTestPremiereLangue = conjointAccompagne ? 90 : 84;
-                        break;
-                    case 4:
-                        pointTestPremiereLangue = conjointAccompagne ? 98 : 91;
-                        break;
-                    case 5:
-                        pointTestPremiereLangue = conjointAccompagne ? 120 : 112;
-                        break;
-                    case 6:
-                        pointTestPremiereLangue = conjointAccompagne ? 128 : 119;
-                        break;
-                    case 7:
-                        pointTestPremiereLangue = conjointAccompagne ? 135 : 126;
-                        break;
-                    case 8:
-                        pointTestPremiereLangue = conjointAccompagne ? 150 : 140;
-                        break;
-                }
+                pointTestLangueFrancais = 0;
             }
-            PointTotal += pointTestPremiereLangue;
+            else if (noteFrancais >= 4 || noteFrancais <= 6)
+            {
+                pointTestLangueFrancais = conjointAccompagne ? 8 : 9;
+            }
+            else if (noteFrancais >= 7 || noteFrancais <= 9)
+            {
+                pointTestLangueFrancais = conjointAccompagne ? 29 : 31;
+            }
+            else if (noteFrancais > 9)
+            {
+                pointTestLangueFrancais = conjointAccompagne ? 32 : 34;
+            }
 
-            return pointTestPremiereLangue;
+            PointTotal += pointTestLangueFrancais;
+
+            return pointTestLangueFrancais;
         }
 
-        public int pointageDeuxiemeLangue(Boolean expire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointageLangueAnglais(int noteAnglais, Boolean conjointAccompagne)
         {
-            int pointTestDeuxiemeLangue = 0;
+            int pointTestLangueAnglais = 0;
 
-            if (!expire)
+            if (noteAnglais < 4)
             {
-                switch (choixTest)
-                {
-                    case 1:
-                        pointTestDeuxiemeLangue = 0;
-                        break;
-                    case 2:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 30 : 28;
-                        break;
-                    case 3:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 90 : 84;
-                        break;
-                    case 4:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 98 : 91;
-                        break;
-                    case 5:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 120 : 112;
-                        break;
-                    case 6:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 128 : 119;
-                        break;
-                    case 7:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 135 : 126;
-                        break;
-                    case 8:
-                        pointTestDeuxiemeLangue = conjointAccompagne ? 150 : 140;
-                        break;
-                }
+                pointTestLangueAnglais = 0;
             }
-            PointTotal += pointTestDeuxiemeLangue;
+            else if (noteAnglais >= 4 || noteAnglais <= 6)
+            {
+                pointTestLangueAnglais = 1;
+            }
+            else if (noteAnglais >= 7 || noteAnglais <= 9)
+            {
+                pointTestLangueAnglais = 3;
+            }
+            else if (noteAnglais > 9)
+            {
+                pointTestLangueAnglais = 6;
+            }
 
-            return pointTestDeuxiemeLangue;
+            PointTotal += pointTestLangueAnglais;
+
+            return pointTestLangueAnglais;
         }
 
-        public int pointageLangueConjoint(Boolean TestExpire, int choixTest, int noteEO, int notesCO, int notesCE, int notesEE, Boolean conjointAccompagne)
+        public int pointageLangueFRConjoint(int noteFrConjoint)
         {
-            int pointTestLangueConjoint = 0;
+            int pointTestLangueFrConjoint = 0;
 
-            if (!TestExpire)
+            if (noteFrConjoint < 4)
             {
-                switch (choixTest)
-                {
-                    case 1:
-                        pointTestLangueConjoint = 0;
-                        break;
-                    case 2:
-                        pointTestLangueConjoint = conjointAccompagne ? 30 : 28;
-                        break;
-                    case 3:
-                        pointTestLangueConjoint = conjointAccompagne ? 90 : 84;
-                        break;
-                    case 4:
-                        pointTestLangueConjoint = conjointAccompagne ? 98 : 91;
-                        break;
-                    case 5:
-                        pointTestLangueConjoint = conjointAccompagne ? 120 : 112;
-                        break;
-                    case 6:
-                        pointTestLangueConjoint = conjointAccompagne ? 128 : 119;
-                        break;
-                    case 7:
-                        pointTestLangueConjoint = conjointAccompagne ? 135 : 126;
-                        break;
-                    case 8:
-                        pointTestLangueConjoint = conjointAccompagne ? 150 : 140;
-                        break;
-                }
+                pointTestLangueFrConjoint =0;
             }
-            PointTotal += pointTestLangueConjoint;
+            else if (noteFrConjoint >= 4 || noteFrConjoint <= 6)
+            {
+                pointTestLangueFrConjoint = 1;
+            }
+            else if (noteFrConjoint >= 7 || noteFrConjoint <= 9)
+            {
+                pointTestLangueFrConjoint = 3;
+            }
+            else if (noteFrConjoint > 9)
+            {
+                pointTestLangueFrConjoint = 5;
+            }
 
-            return pointTestLangueConjoint;
+            PointTotal += pointTestLangueFrConjoint;
+
+            return pointTestLangueFrConjoint;
+        }
+
+        public int pointageLangueENConjoint(int noteEnConjoint)
+        {
+            int pointTestLangueEnConjoint = 0;
+
+            if (noteEnConjoint < 4)
+            {
+                pointTestLangueEnConjoint = 0;
+            }
+            else if (noteEnConjoint >= 4 || noteEnConjoint <= 6)
+            {
+                pointTestLangueEnConjoint = 1;
+            }
+            else if (noteEnConjoint >= 7 || noteEnConjoint <= 9)
+            {
+                pointTestLangueEnConjoint = 3;
+            }
+            else if (noteEnConjoint > 9)
+            {
+                pointTestLangueEnConjoint = 5;
+            }
+
+            PointTotal += pointTestLangueEnConjoint;
+
+            return pointTestLangueEnConjoint;
         }
 
         public int pointageExperienceTravail(int anneeExperience, Boolean conjointAccompagne)
@@ -362,7 +396,7 @@ namespace TSR.DAL
         {
             int pointCombinaisonSL = 0;
 
-            if (niveauEtudeComplete == 0 || niveauEtudeComplete ==1)
+            if (niveauEtudeComplete == 0 || pointPremiereLangue == 1)
                 pointCombinaisonSL = 0;
 
             if (niveauEtudeComplete == 2 && pointPremiereLangue == 9)
@@ -565,24 +599,30 @@ namespace TSR.DAL
             this.pointageNiveauDeScolarite(this.AObtenuDiplomeCanadien,  this.EtudeComplete, this.ConjointAccompagne);
            
             this.pointageNiveauDeScolariteConjoint(this.AObtenuDiplomeCanadien, this.EtudeComplete);
-           
-            //int pointPremiereLangue = this.pointagePremiereLangue(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
             
-            //this.pointageDeuxiemeLangue(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
-           
-            //this.pointageLangueConjoint(this.Expire, this.ChoixTest, int noteEO, int notesCO, int notesCE, int notesEE, this.ConjointAccompagne);
-           
+            int noteFrancais = this.sommeNoteCategorieLangue(this.PointFrEcouter, this.PointFrEcrire, this.PointFrLire, this.PointFrParler);
+            int noteAnglais = this.sommeNoteCategorieLangue(this.PointEnEcouter, this.PointEnEcrire, this.PointEnLire, this.PointEnParler);
+
+            int noteFrancaisConjoint = this.sommeNoteCategorieLangue(this.PointFrEcouterConjoint, this.PointFrEcrireConjoint, this.PointFrLireConjoint, this.PointFrParlerConjoint);
+            int noteAnglaisConjoint = this.sommeNoteCategorieLangue(this.PointEnEcouterConjoint, this.PointEnEcrireConjoint, this.PointEnLireConjoint, this.PointEnParlerConjoint);
+
+            int pointLangueFrancais = this.pointageLangueFrancais(noteFrancais, this.ConjointAccompagne);
+            int pointLangueAnglais = this.pointageLangueAnglais(noteAnglais, this.ConjointAccompagne);
+            
+            int pointLangueFrancaisConjoint = this.pointageLangueFRConjoint(noteFrancaisConjoint);
+            int pointLangueAnglaisConjoint = this.pointageLangueENConjoint(noteAnglaisConjoint);
+
             int pointTravailCanada = this.pointageExperienceTravail(this.AnneeExperienceTravailCanada, this.ConjointAccompagne);
            
-            this.pointageExperienceTravailConjoint(this.AnneeExperienceTravailConjointCanada);
+           int pointTravailConjoint = this.pointageExperienceTravailConjoint(this.AnneeExperienceTravailConjointCanada);
             
            // int pointTravailEtranger = ;
             
-            // this.combinaisonScolariteLangues(this.NiveauEtude, pointPremiereLangue);
+            this.combinaisonScolariteLangues(this.DescriptionEtudeCanadien, pointLangueFrancais);
             
             this.combinaisonScolariteTravailCanada(this.DescriptionEtudeCanadien, pointTravailCanada);
 
-            //this.combinaisonLangueTravailEtranger(pointPremiereLangue,  pointTravailEtranger);
+            ///this.combinaisonLangueTravailEtranger(pointPremiereLangue,  pointTravailEtranger);
 
             this.combinaisonTravailCanada_Etranger(AnneeExperienceTravailEtranger, AnneeExperienceTravailCanada);
 

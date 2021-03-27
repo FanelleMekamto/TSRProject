@@ -35,20 +35,14 @@ namespace TSR.Views
             pickerExpEcriteAutreSelectedIndex = pickerExpEcriteValueAutre.SelectedIndex;
         }
 
-        public LanguePage()
+        public void NiveauLanguePage()
         {
             InitializeComponent();
-            lblPointTotal.Text = MainPage.Fiche.PointTotal.ToString();
         }
 
         async void nextLanguePage_Clicked(object sender, EventArgs e)
         {
-            //var response = await DisplayActionSheet("Choix de Province", "Annuler", "Supprimer", "Quebec", "Autres");
-
             fiche.PointAge(fiche.Age, fiche.ConjointAccompagne);
-
-            await DisplayAlert("Point total actuel", fiche.PointTotal.ToString(), "OK");
-
             await this.Navigation.PushAsync(new WorkPage());
         }
 
@@ -66,11 +60,13 @@ namespace TSR.Views
             if (statutSelectedIndex == 1)
             {
                 choixTestLinguistiqueOfficiel.IsVisible = true;
+                nextContactPage.IsEnabled = true;
             }
             else if (statutSelectedIndex == 2)
             {
                 choixTestLinguistiqueOfficiel.IsVisible = false;
                 DisplayAlert("Candidature Inadmissible", "D'après vos réponses, vous ne semblez pas être admissible au processus de sélection", "OK");
+                nextContactPage.IsEnabled = false;
             }
         }
 
@@ -83,7 +79,7 @@ namespace TSR.Views
             {
                 choixNotes.IsVisible = true; 
             }
-
+            /*
             switch (statutSelectedIndex) {
                 case 1:
                     pickerExpOraleValue.ItemsSource = Data.listNotesCELPIPG;
@@ -112,12 +108,13 @@ namespace TSR.Views
             }
 
             initPickerAutreTest();
+            */
         }
 
         private void initPickerAutreTest() {
             var pickerTestLinguistiqueOfficielSelectedIndex = pickerTestLinguistiqueOfficiel.SelectedIndex;
 
-            switch (pickerTestLinguistiqueOfficielSelectedIndex)
+            /*switch (pickerTestLinguistiqueOfficielSelectedIndex)
             {
                 case 1:
                     pickerAutreTestLinguistique.ItemsSource = Data.ListAutreTest1;
@@ -131,7 +128,7 @@ namespace TSR.Views
                 case 4:
                     pickerAutreTestLinguistique.ItemsSource = Data.ListAutreTest2;
                     break;
-            }
+            }*/
         }
 
         private void pickerAutreTestLinguistique_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,7 +141,7 @@ namespace TSR.Views
             {
                 choixNotesAutresTest.IsVisible = true;
             }
-
+            /*
             switch (pickerTestLinguistiqueOfficielSelectedIndex)
             {
                 case 1:
@@ -215,7 +212,7 @@ namespace TSR.Views
                             break;
                     }
                     break;
-            }
+            }*/
         }
         
         private void pickerExpOraleValue_SelectedIndexChanged(object sender, EventArgs e)
@@ -251,17 +248,6 @@ namespace TSR.Views
                     fiche.NoteLinguistique = pickerExpOraleSelectedIndex;
                     break;
             }
-
-            /*if (pickerExpOraleSelectedIndex != 0 && pickerComOralSelectedIndex != 0 && pickerComEcritSelectedIndex != 0 && pickerExpEcriteSelectedIndex !=0)
-            {
-                choixAutreTest.IsVisible = true;
-                initPickerAutreTest();
-
-            }
-            else
-            {
-                choixAutreTest.IsVisible = false;
-            }*/
         }
 
         private void pickerComOralValue_SelectedIndexChanged(object sender, EventArgs e)

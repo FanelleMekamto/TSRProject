@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TSR.DAL
 {
     static class Data
     {
+        public static Dictionary<string, int> pointNiveauLinguistique = new Dictionary<string, int>();
+
         public static List<string> ListNiveauScolarite = new List<string> { 
             "Selectionner...", 
             "Aucun, étude secondaire non complétée", 
@@ -16,10 +17,18 @@ namespace TSR.DAL
             "Au moins 2 certificats/grades/diplomes, à la suite d'un prog d'études seconadaire d'au moins 3 ans.",
             "Maitrise ou diplôme professionnel",
             "Diplôme universitaire au niveau du doctorat(PhD)"
-
         };
 
-        public static List<String> ListAutreTest1 = new List<String>
+        public static List<String> ListNiveauLangage = new List<String>
+        {
+            "Selectionner...",
+            "Elevé",
+            "Moyen",
+            "Faible",
+            "Aucun"
+        };
+
+        /*public static List<String> ListAutreTest1 = new List<String>
         {
             "Selectionner...",
             "TEF Canada",
@@ -163,6 +172,6 @@ namespace TSR.DAL
             "375 - 405",
             "342 - 374",
             "0 - 341"
-        };
+        };*/
     }
 }

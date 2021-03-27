@@ -1,39 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TSR.Extensions.LangueCell">
-    <StackLayout VerticalOptions="FillAndExpand" IsVisible="false" Padding="13, 0" x:Name="choixNotes">
-        <Label Text="Entrez vos notes de test pour :" />
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="TSR.Extensions.LangueCell">
+    <StackLayout Orientation="Vertical">
+        <!--<StackLayout Orientation="Horizontal" Padding="13, 0">
+            <Label Text="Lire:" VerticalOptions="Center"/>
+            <Picker x:Name="pickerLireFrancais" VerticalOptions="Center" 
+                                       HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerLireFrancais_SelectedIndexChanged" SelectedIndex="0">
 
-        <StackLayout Padding="13, 0" x:Name="notesExpOrale">
-            <Label Text="Expression Orale :" VerticalOptions="Center" TextColor="Red"/>
-            <!--<Picker x:Name="pickerExpOraleValue" VerticalOptions="Center" 
-                                            HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpOraleValue_SelectedIndexChanged" SelectedIndex="0">
-            </Picker>-->
+            </Picker>
         </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="13, 0">
+            <Label Text="Ecrire:" VerticalOptions="Center"/>
+            <Picker x:Name="pickerEcrireFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcrireFrancais_SelectedIndexChanged" SelectedIndex="0">
 
-        <StackLayout Padding="13, 0" x:Name="notesComOrale">
-            <Label Text="Compehension de l'oral:" VerticalOptions="Center" TextColor="Red"/>
-            <!--<Picker x:Name="pickerComOralValue" VerticalOptions="Center" 
-                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComOralValue_SelectedIndexChanged" SelectedIndex="0">
-
-            </Picker>-->
+            </Picker>
         </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="13, 0">
+            <Label Text="Parler:" VerticalOptions="Center"/>
+            <Picker x:Name="pickerParlerFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerParlerFrancais_SelectedIndexChanged" SelectedIndex="0">
 
-        <StackLayout  Padding="13, 0" x:Name="notesComEcrite">
-            <Label Text="Comprehension de l'écrit:" VerticalOptions="Center" TextColor="Red"/>
-            <!--<Picker x:Name="pickerComEcritValue" VerticalOptions="Center" 
-                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerComEcritValue_SelectedIndexChanged" SelectedIndex="0">
-
-            </Picker>-->
+            </Picker>
         </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="13, 0">
+            <Label Text="Ecouter:" VerticalOptions="Center"/>
+            <Picker x:Name="pickerEcouterFrancais" VerticalOptions="Center" 
+                                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEcouterFrancais_SelectedIndexChanged" SelectedIndex="0">
 
-        <StackLayout Padding="13, 0" x:Name="notesExpEcrite">
-            <Label Text="Expression écrite :" VerticalOptions="Center" TextColor="Red"/>
-            <!--<Picker x:Name="pickerExpEcriteValue" VerticalOptions="Center" 
-                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerExpEcriteValue_SelectedIndexChanged" SelectedIndex="0">
-
-            </Picker>-->
-        </StackLayout>
+            </Picker>
+        </StackLayout>-->
     </StackLayout>
 </ViewCell>

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v10.0": {
+      "Aspose.Cells/21.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid44/Aspose.Cells.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid44/Aspose.Cells.dll": {}
+        }
+      },
       "CsvHelper/19.0.0": {
         "type": "package",
         "dependencies": {
@@ -51,6 +60,37 @@
             "assetType": "native",
             "rid": "win7-x86"
           }
+        }
+      },
+      "Syncfusion.Licensing/18.4.0.48": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid10.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Compression/18.4.0.48": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.XlsIO/18.4.0.48": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "18.4.0.48",
+          "Syncfusion.Xamarin.Compression": "18.4.0.48"
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.XlsIO.Portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.XlsIO.Portable.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -1011,7 +1051,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Aspose.Cells": "21.3.0",
           "CsvHelper": "19.0.0",
+          "Syncfusion.Xamarin.XlsIO": "18.4.0.48",
           "Xamarin.Essentials": "1.6.0",
           "Xamarin.Forms": "5.0.0.1874",
           "sqlite": "3.13.0"
@@ -1026,6 +1068,70 @@
     }
   },
   "libraries": {
+    "Aspose.Cells/21.3.0": {
+      "sha512": "TdIz5NhfXhL6ydwz2rt8vRldnkUwhUIcL+BGB/FUOPlNEhOQpDK6A7rtqpKOQU6bGtuZCH6bIb5MO/IJ3XY36A==",
+      "type": "package",
+      "path": "aspose.cells/21.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Help/Aspose.Cells For .NET Documentation.chm",
+        "License/thirdpartylicenses.Aspose.Cells.for.NET.pdf",
+        "acw_client/acwmain.js",
+        "acw_client/b1.gif",
+        "acw_client/b2.gif",
+        "acw_client/b3.gif",
+        "acw_client/b4.gif",
+        "acw_client/b5.gif",
+        "acw_client/b6.gif",
+        "acw_client/b7.gif",
+        "acw_client/b8.gif",
+        "acw_client/collapse.gif",
+        "acw_client/colordlg.htm",
+        "acw_client/dot.gif",
+        "acw_client/dropdown.gif",
+        "acw_client/expand.gif",
+        "acw_client/findDlg.htm",
+        "acw_client/findDlg.js",
+        "acw_client/fontdlg.htm",
+        "acw_client/fontdlg.js",
+        "acw_client/fontdlg_l.htm",
+        "acw_client/fontdlg_l.js",
+        "acw_client/form.gif",
+        "acw_client/gridwebform.js",
+        "acw_client/headerBg.gif",
+        "acw_client/lang_cn.js",
+        "acw_client/lang_en.js",
+        "acw_client/larrow.gif",
+        "acw_client/loading.gif",
+        "acw_client/menu.css",
+        "acw_client/rarrow.gif",
+        "acw_client/save.gif",
+        "acw_client/star.gif",
+        "acw_client/submit.gif",
+        "acw_client/undo.gif",
+        "acw_client/updating.gif",
+        "acw_client/x.gif",
+        "aspose.cells.21.3.0.nupkg.sha512",
+        "aspose.cells.nuspec",
+        "lib/MonoAndroid44/Aspose.Cells.dll",
+        "lib/MonoAndroid44/Aspose.Cells.xml",
+        "lib/net20/Aspose.Cells.dll",
+        "lib/net20/Aspose.Cells.xml",
+        "lib/net35/Aspose.Cells.dll",
+        "lib/net35/Aspose.Cells.xml",
+        "lib/net40-client/Aspose.Cells.dll",
+        "lib/net40-client/Aspose.Cells.xml",
+        "lib/net40/Aspose.Cells.dll",
+        "lib/net40/Aspose.Cells.xml",
+        "lib/net50/Aspose.Cells.dll",
+        "lib/net50/Aspose.Cells.xml",
+        "lib/netstandard20/Aspose.Cells.dll",
+        "lib/netstandard20/Aspose.Cells.xml",
+        "lib/xamarinios10/Aspose.Cells.dll",
+        "lib/xamarinios10/Aspose.Cells.xml"
+      ]
+    },
     "CsvHelper/19.0.0": {
       "sha512": "vUHF8wPOVvdtUQ4sXQI62jEIGcz5p7MG3Qf4Hazg+3EZQFh+UoTASEG0a1tsGmhNsHZ/Y+qRO+SgLMZO8jNcSg==",
       "type": "package",
@@ -1133,6 +1239,69 @@
         "sqlite-version.txt",
         "sqlite.3.13.0.nupkg.sha512",
         "sqlite.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/18.4.0.48": {
+      "sha512": "oXAdH7utKg/e8/oOeymi88yeXyFf7PzY9ONir+hWgjAUWwKFRaco8SQXI/hCfyCq1fDPHyHQUSJE8S2oVBfutQ==",
+      "type": "package",
+      "path": "syncfusion.licensing/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netcoreapp5.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.18.4.0.48.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.Compression/18.4.0.48": {
+      "sha512": "vlhAdl6CGT4tJ5AxuXSnVb08UsERsPtYeraPJ5//wLi2ZWxXm5PVr5X9e3lUfkNXgSmFLiu5DnL2MoDpJFrSTg==",
+      "type": "package",
+      "path": "syncfusion.xamarin.compression/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.4/Syncfusion.Compression.Portable.dll",
+        "lib/netstandard1.4/Syncfusion.Compression.Portable.xml",
+        "lib/netstandard2.0/Syncfusion.Compression.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.Compression.Portable.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Compression.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Compression.Portable.xml",
+        "syncfusion.xamarin.compression.18.4.0.48.nupkg.sha512",
+        "syncfusion.xamarin.compression.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.XlsIO/18.4.0.48": {
+      "sha512": "4HgnmVt0AoFY/bY0DrsQ3j2cRzljKxFNhzaThtfeaq9Km7Pb3jO4gVyoZtpUVMxsUultD5z91TAuI/1Gd+orMw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.xlsio/18.4.0.48",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.4/Syncfusion.XlsIO.Portable.dll",
+        "lib/netstandard1.4/Syncfusion.XlsIO.Portable.xml",
+        "lib/netstandard2.0/Syncfusion.XlsIO.Portable.dll",
+        "lib/netstandard2.0/Syncfusion.XlsIO.Portable.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.XlsIO.Portable.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.XlsIO.Portable.xml",
+        "syncfusion.xamarin.xlsio.18.4.0.48.nupkg.sha512",
+        "syncfusion.xamarin.xlsio.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -2266,6 +2435,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v10.0": [
+      "Aspose.Cells >= 21.3.0",
       "TSR >= 1.0.0",
       "Xamarin.Essentials >= 1.6.0",
       "Xamarin.Forms >= 5.0.0.1874",
@@ -2314,6 +2484,10 @@
     "frameworks": {
       "monoandroid10.0": {
         "dependencies": {
+          "Aspose.Cells": {
+            "target": "Package",
+            "version": "[21.3.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.6.0, )"

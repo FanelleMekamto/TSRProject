@@ -4,7 +4,7 @@
              x:Class="TSR.Views.OtherProvince"
              Title="Immigration other Provinces">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Vertical">
             <Label Text="Welcome to Immigration to others provinces!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

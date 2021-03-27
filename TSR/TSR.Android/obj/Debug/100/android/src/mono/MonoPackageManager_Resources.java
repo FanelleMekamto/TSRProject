@@ -3,8 +3,12 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "TSR.Android.dll" comes first in this list. */
 		"TSR.Android.dll",
+		"Aspose.Cells.dll",
 		"CsvHelper.dll",
 		"FormsViewGroup.dll",
+		"Syncfusion.Compression.Portable.dll",
+		"Syncfusion.Licensing.dll",
+		"Syncfusion.XlsIO.Portable.dll",
 		"TSR.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

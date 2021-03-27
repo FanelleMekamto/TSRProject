@@ -6,25 +6,25 @@
              x:Class="TSR.Views.ScolaritePage">
     <ContentPage.Content>
         <StackLayout>
-            <TableView Intent="Form">
+            <TableView Intent="Form" HasUnevenRows="True">
                 <TableRoot>
                     <TableSection Title="Scolarité" TextColor="DarkGray">
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="13, 0">
+                            <StackLayout Orientation="Vertical" Padding="13, 0">
                                 <Label Text="Quel niveau d'études avez-vous atteint?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerEtudeComplete" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerEtudeComplete_SelectedIndexChanged"
-                                        ItemsSource="{Binding ListData}" SelectedItem="{Binding SelectedLevel}">
+                                        ItemsSource="{Binding ListData}" SelectedItem="{Binding SelectedLevel}" SelectedIndex="0">
                                 </Picker>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="13, 0" x:Name="choixObtentionDiplome">
+                            <StackLayout Orientation="Vertical" Padding="13, 0" x:Name="choixObtentionDiplome">
                                 <Label Text="Avez-vous obtenu un certificat, grade ou diplôme canadien?" VerticalOptions="Center"/>
                                 <Picker x:Name="pickerObtentionDiplome" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerObtentionDiplome_SelectedIndexChanged"
-                                    SelectedIndex="0">
+                                     SelectedItem="0" SelectedIndex="0">
                                     <Picker.Items>
                                         <x:String>Sélectionner...</x:String>
                                         <x:String>Oui</x:String>
@@ -35,7 +35,7 @@
                         </ViewCell>
 
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="13, 0" IsVisible="false" x:Name="choixDiplomeCanadien">
+                            <StackLayout Orientation="Vertical" Padding="13, 0" IsVisible="false" x:Name="choixDiplomeCanadien">
                                 <Label Text="Choisissez la meilleure réponse pour décrire ce niveau d'éducation." VerticalOptions="Center"/>
                                 <Picker x:Name="pickerDiplomeCanadien" VerticalOptions="Center" 
                                    HorizontalOptions="FillAndExpand" SelectedIndexChanged="pickerDiplomeCanadien_SelectedIndexChanged"
