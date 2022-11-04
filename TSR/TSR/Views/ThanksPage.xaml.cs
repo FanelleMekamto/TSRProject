@@ -31,7 +31,7 @@ namespace TSR.Views
             mail.Subject = subject;
             mail.Body = body;
             System.Net.Mail.Attachment attachment;
-            String fileName= @"C:\Users\Fanelle\Documents\TSR\Test\TSR.csv";
+            String fileName= @"C:\Users\Fanelle\source\repos\TSRTest.txt";
             attachment = new Attachment(fileName);
             ///data/user/0/com.companyname.tsr/files/TSR/TSR.xlsx
 

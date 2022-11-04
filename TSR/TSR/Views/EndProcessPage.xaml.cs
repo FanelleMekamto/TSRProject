@@ -28,19 +28,26 @@ namespace TSR.Views
      
         private void SaveFile()
         {
+            // Folder, where a file is created.  
+            // Make sure to change this folder to your own folder  
+            string folder = @"E:\Old course\Download\TSR\";
+            // Filename  
+            string fileName = "TSRTest.txt";
+            // Fullpath. You can direct hardcode it if you like.  
+            string fullPath = folder + fileName;
+            // An array of strings  
+            string[] authors = {"Mahesh Chand", "Allen O'Neill", "David McCarter", "Raj Kumar", "Dhananjay Kumar"};
+            // Write array of strings to a file using WriteAllLines.  
+            // If the file does not exists, it will create a new file.  
+            // This method automatically opens the file, writes to it, and closes file  
+            File.WriteAllLines(fullPath, authors);
+            // Read a file  
+            string readText = File.ReadAllText(fullPath);
+            Console.WriteLine(readText);
 
-            /*String fileName = @"C:\Users\";
-           string filePath = Path.Combine(fileName, "WriteFile.txt");
-
-           var csv = new StringBuilder();
 
 
-           csv.AppendLine("Big Corp");
-
-           //after your loop
-           File.WriteAllText(filePath, csv.ToString());*/
-
-            string fileName = "testtsr.txt";
+            /*string fileName = "testtsr.txt";
             string textToAdd = "Example text in file";
             FileStream fs = null;
             try
@@ -55,7 +62,7 @@ namespace TSR.Views
             {
                 if (fs != null)
                     fs.Dispose();
-            }
+            }*/
 
             /* using (var writer = new StreamWriter("path\\to\\file.csv"))
               using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
@@ -79,8 +86,6 @@ namespace TSR.Views
 
                 //Adding text to a cell
                 worksheet.Range["A1"].Text = "Hello World";
-
-               
 
                 //Save the workbook to stream in xlsx format. 
                 MemoryStream stream = new MemoryStream();
